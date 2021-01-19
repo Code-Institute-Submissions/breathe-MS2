@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/sandstone/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<title>Breathe</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="site-logo" href="index.html">Breathe</a>
+        </div>
+    </nav>
+
+    <div class="hero-image">
+        <div class="row no-gutters">
+            <div class="col-12 button">
+                
+                    <button 
+                        type ="button" class="lets-breathe-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><h1><strong>Let's Breathe</strong></h1>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <hr>
+        <div class="container-fluid breathing-info">
+            <div class="row">
+                <div class="col-12 breathing-technique-h1 text-center">
+                    <h1>Breathing Techniques & Benefits</h1>
+                </div>
+                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                    <h2>Type 1</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
+                        Donec interdum ultrices neque id efficitur. Nulla semper ex sit amet mi vulputate, vel malesuada elit vestibulum. Nam vitae mauris 
+                        sit amet eros scelerisque bibendum sit amet vehicula massa. Morbi consectetur dapibus vehicula. Vivamus tempus ultricies pretium. Etiam 
+                        elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
+                    </p>
+                </div>
+                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                    <h2>Type 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
+                        Donec interdum ultrices neque id efficitur. Nulla semper ex sit amet mi vulputate, vel malesuada elit vestibulum. Nam vitae mauris 
+                        sit amet eros scelerisque bibendum sit amet vehicula massa. Morbi consectetur dapibus vehicula. Vivamus tempus ultricies pretium. Etiam 
+                        elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
+                    </p>
+                </div>
+                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                    <h2>Type 3</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
+                        Donec interdum ultrices neque id efficitur. Nulla semper ex sit amet mi vulputate, vel malesuada elit vestibulum. Nam vitae mauris 
+                        sit amet eros scelerisque bibendum sit amet vehicula massa. Morbi consectetur dapibus vehicula. Vivamus tempus ultricies pretium. Etiam 
+                        elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
+                    </p>                    
+                </div>
+                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                    <h2>Type 4</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
+                        Donec interdum ultrices neque id efficitur. Nulla semper ex sit amet mi vulputate, vel malesuada elit vestibulum. Nam vitae mauris 
+                        sit amet eros scelerisque bibendum sit amet vehicula massa. Morbi consectetur dapibus vehicula. Vivamus tempus ultricies pretium. Etiam 
+                        elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--https://stackoverflow.com/questions/27870042/bootstrap-input-dialog-with-radio-buttons-->
+
+    <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title" id="breathingModal">Breathing Technique:</h4>
+            <p>(Please select one)</p>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Technique 1
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Technique 2
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Technique 3
+            </label>
+          </div>
+
+            <div class="modal-body">
+            <h4 class="modal-title" id="timingModal">Breathing Duration:</h4>
+            <label class="radio-inline">
+              <input type="radio" name="timingOptions" id="Timing1" value="option1"> 1 minute
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="timingOptions" id="Timing2" value="option2"> 2 minutes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="timingOptions" id="Timing3" value="option3"> Custom
+            </label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Let's Start</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+        
+
+
+    <footer class="container-fluid footer-container">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-12 social-icons justify-content-center">
+                <ul class="list-group list-group-horizontal justify-content-center">
+                    <li class="list-group-item">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                        ><i class="fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                        </a>  
+                    </li>
+                    <li class="list-group-item">
+                        <a
+                        href="https://www.instagram.com"
+                        target="_blank"
+                        rel="noopener"
+                        >
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener"
+                        ><i class="fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+              </ul>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
