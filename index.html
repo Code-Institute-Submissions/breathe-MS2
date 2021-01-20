@@ -39,12 +39,12 @@
 
     <section>
         <hr>
-        <div class="container-fluid breathing-info">
-            <div class="row">
+        <div class="container-fluid breathing-info ">
+            <div class="row justify-content-center">
                 <div class="col-12 breathing-technique-h1 text-center">
                     <h1>Breathing Techniques & Benefits</h1>
                 </div>
-                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                <div class="col-10 breathing-technique-h2 col-sm-5 text-center">
                     <h2>Type 1</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
@@ -53,7 +53,7 @@
                         elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
                     </p>
                 </div>
-                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                <div class="col-10 breathing-technique-h2 col-sm-5 text-center">
                     <h2>Type 2</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
@@ -62,7 +62,7 @@
                         elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
                     </p>
                 </div>
-                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                <div class="col-10 breathing-technique-h2 col-sm-5 text-center">
                     <h2>Type 3</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
@@ -71,7 +71,7 @@
                         elementum erat purus. In hac habitasse platea dictumst. Donec eleifend neque erat, sed lacinia dolor vestibulum eget.
                     </p>                    
                 </div>
-                <div class="col-12 breathing-technique-h2 col-sm-6 text-center">
+                <div class="col-10 breathing-technique-h2 col-sm-5 text-center">
                     <h2>Type 4</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae orci felis. Fusce vehicula leo euismod erat accumsan iaculis. 
@@ -81,46 +81,47 @@
                     </p>                    
                 </div>
             </div>
-        </div>
+            </div>
     </section>
 
 <!--https://stackoverflow.com/questions/27870042/bootstrap-input-dialog-with-radio-buttons-->
 
     <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+      <div class="modal-dialog ">
+        <div class="modal-content breathe-modal justify-content-center">
           <div class="modal-header">
+            <p class="site-logo-modal" href="index.html">Breathe</p>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             
           </div>
-          <div class="modal-body">
+          <div class="modal-body ">
             <h4 class="modal-title" id="breathingModal">Breathing Technique:</h4>
             <p>(Please select one)</p>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Technique 1
+              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Technique 1 
             </label>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Technique 2
+              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Technique 2 
             </label>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Technique 3
+              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Technique 3 
             </label>
           </div>
 
             <div class="modal-body">
             <h4 class="modal-title" id="timingModal">Breathing Duration:</h4>
             <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing1" value="option1"> 1 minute
+              <input type="radio" name="timingOptions" id="Timing1" value="option1"> 1 minute  
             </label>
             <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing2" value="option2"> 2 minutes
+              <input type="radio" name="timingOptions" id="Timing2" value="option2"> 2 minutes  
             </label>
             <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing3" value="option3"> Custom
+              <input type="radio" name="timingOptions" id="Timing3" value="option3"> Custom  
             </label>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Let's Start</button>
+            <button type="button" class=" modal-btn">Let's Start</button>
           </div>
           
         </div>
