@@ -14,22 +14,27 @@
 <title>Breathe</title>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-light bg-light">
-        <div class="container-fluid">
+    <div class="container-fluid nav-container">
+       <nav class="navbar navbar-fixed-top navbar-light breathe-navbar">
             <a class="site-logo" href="index.html">Breathe</a>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
-    <div class="hero-image">
-        <div class="row no-gutters">
-            <div class="col-12 button">
-                
+
+    <div class="container-fluid no-gutters callout-container hero-image">
+        
+             
+            <div class="jumbotron row no-gutters">
+                <div class="col-12  justify-content-center">
+                    <p class="jumbotron-text">Choose the breathing technique that you need</p>
                     <button 
-                        type ="button" class="lets-breathe-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><h1><strong>Let's Breathe</strong></h1>
+                        type ="button" class="col-12 jumbotron-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe">
+                        <h1><strong>Let's Breathe</strong></h1>
                     </button>
-                
+                    
+                </div>
             </div>
-        </div>
+        
     </div>
 
     <section>
@@ -115,7 +120,6 @@
             </label>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Let's Start</button>
           </div>
           

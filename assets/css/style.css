@@ -21,28 +21,74 @@ hr {
     border: 1px solid #202020;
     width: 100%;
 }
+
 /*Navbar Styling */
 .site-logo {
     color: #3C403D ;
-    text-decoration: none;
+    
+    font-size: 2em;
     font-weight: 800;
-    margin-right: auto;
+    margin-left: 2em;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #3C403D;
+}
+.nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 1;
+}
+.navbar {
+    margin-bottom: 0;
+    border: 0;
+    width: 100%;
+}
+.navbar-fixed-top .breathe-navbar {
+    background-color: transparent ;
+    border: none;
+    overflow: hidden;
+}
+
+.breathe-navbar a { 
+float: left;
 }
 
 /*Hero Image */
 .hero-image {
-    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat center center;
+    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat center center fixed ;
     height: 100vh;
     width: 100%;
-    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
-.button {
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron-text {
+    color: #F3F3F3 ;
+    font-weight: 600;
+    margin: 0 auto;
+}
+.jumbotron-btn {
+    width: fit-content;
     display: flex;
     align-content: center;
     justify-content: center;
+    margin: 0 auto;
     
 }
 
