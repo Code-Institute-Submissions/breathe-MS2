@@ -7,9 +7,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="Description" content="Enter your description here"/>
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/sandstone/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
 
 <title>Breathe</title>
 </head>
@@ -42,32 +44,43 @@
 
     <section>
         <hr class="grey-hr">
-        <div class="container-fluid breathing-info ">
+        <div class="container-fluid breathing-info-container ">
             <div class="row justify-content-center">
                 <div class="col-12 breathing-technique-h1 text-center">
                     <h1>Breathing Techniques & Benefits</h1>
                 </div>
-                <div class="col-10 breathing-technique-h2 col-sm-5 ">
-                    <h2 class="text-center">Box Breathing <i class="fas fa-lungs"></i></h2>
-                
+                <div class="col-10 breathing-technique-h2 col-sm-4 ">
+                    <h2 id="breathing-h2" class="text-center"><i class="fas fa-lungs"></i>Box Breathing </h2>
+                    <button class="info-btn" id="more-info-btn-1">More info</button>
+                        <p id="breathing-info-1">
                         Tempo 4:4:4:4
-                  
+                        </p>
                 </div>
-                <div class="col-10 breathing-technique-h2 col-sm-5 ">
-                    <h2 class="text-center">Relaxing Breathing <i class="fas fa-bed"></i></h2>
-                    
-                        Tempo 4:7:8:0
-                     
 
-                    
+                <div class="col-10 breathing-technique-h2 col-sm-4 ">
+                    <h2 class="text-center"><i class="fas fa-bed"></i>Relaxing Breathing </h2>
+                    <button class="info-btn" id="more-info-btn-2">More info</button>
+                    <p id="breathing-info-2">
+                        Tempo 4:7:8:0
+                     </p>
+
                 </div>
-                <div class="col-10 breathing-technique-h2 col-sm-5 ">
-                    <h2 class="text-center">Type 3 <i class="fas fa-running"></i></h2>
+                
+
+                
+                <div class="col-10 breathing-technique-h2 col-sm-5" >
+                    <h2 class="text-center"><i class="fas fa-running"></i>Type 3 </h2>
+                    <button class="info-btn" id="more-info-btn-3">Click for more info</button>
+                    <p id="breathing-info-3">
                            Tempo 2:2:2:3:2:4:2:5
+                    </p>
                 </div>
                 <div class="col-10 breathing-technique-h2 col-sm-5 ">
-                    <h2 class="text-center">Type 4 <i class="fas fa-praying-hands"></i></h2>
+                    <h2 class="text-center"><i class="fas fa-praying-hands"></i>Type 4 </h2>
+                    <button class="info-btn" id="more-info-btn-4">More info</button>
+                <p id="breathing-info-4">
                            Tempo 5:5:5
+                    </p>
                 </div>
             </div>
             </div>
@@ -149,9 +162,13 @@
             </div>
         </div>
     </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="assets/js/index.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
