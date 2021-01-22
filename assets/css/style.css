@@ -191,3 +191,29 @@ footer {
 }
 
 
+/*breathe.html*/
+.breathe-timer {
+    margin: 50px auto;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.breathe-circle {
+    height: 15em;
+    width: 15em;
+    background-color: transparent;
+    border: 3px solid #202020;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-btn {
+    background-color: #DADED4 ;
+    border-radius: 12px;
+    height: 20px;
+
+}
+
