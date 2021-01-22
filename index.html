@@ -18,25 +18,21 @@
 <body>
     <div class="container-fluid nav-container">
        <nav class="navbar navbar-fixed-top navbar-light breathe-navbar">
-            <a class="site-logo" href="index.html">Breathe</a>
+            <a class="site-logo" href="x">Breathe</a>
         </nav>
     </div>
-
-
 
     <div class="container-fluid no-gutters callout-container hero-image">
         
              
             <div class="jumbotron row no-gutters">
                 <div class="col-12  justify-content-center">
-                    <p class="jumbotron-text text-center">Choose the breathing technique that you need</p>
+                    <p class="jumbotron-text text-center">Choose the breathing technique that you need today</p>
                     <hr class="grey-hr">
                     <button 
                         type ="button" class="col-12 jumbotron-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe">
                         <h1><strong>Let's Breathe</strong></h1>
                     </button>
-                    
-                    
                 </div>
             </div>
         
@@ -69,17 +65,17 @@
 
                 
                 <div class="col-10 breathing-technique-h2 col-sm-5" >
-                    <h2 class="text-center"><i class="fas fa-running"></i>Type 3 </h2>
+                    <h2 class="text-center"><i class="fas fa-running"></i>Rhythmic Breathing</h2>
                     <button class="info-btn" id="more-info-btn-3">Click for more info</button>
                     <p id="breathing-info-3">
                            Tempo 2:2:2:3:2:4:2:5
                     </p>
                 </div>
                 <div class="col-10 breathing-technique-h2 col-sm-5 ">
-                    <h2 class="text-center"><i class="fas fa-praying-hands"></i>Type 4 </h2>
+                    <h2 class="text-center"><i class="fas fa-praying-hands"></i>Calming Breathing </h2>
                     <button class="info-btn" id="more-info-btn-4">More info</button>
                 <p id="breathing-info-4">
-                           Tempo 5:5:5
+                           Tempo 7:11
                     </p>
                 </div>
             </div>
@@ -92,38 +88,44 @@
       <div class="modal-dialog ">
         <div class="modal-content breathe-modal justify-content-center">
           <div class="modal-header">
-            <p class="site-logo-modal" href="index.html">Breathe</p>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            
+            <button type="button" class="close" id="close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             
           </div>
-          <div class="modal-body ">
+          <div class="modal-body-1">
             <h4 class="modal-title" id="breathingModal">Breathing Technique:</h4>
             <p>(Please select one)</p>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Technique 1 
+              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Box Breathing (4:4:4:4 Tempo)
+            </label><br>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Relaxing Breathing (4:7:8:0 Tempo) 
+            </label> <br>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Rhythmic Breathing (2:2:2:3:2:4:2:5 Tempo)
             </label>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Technique 2 
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Technique 3 
+              <input type="radio" name="breathingOptions" id="Technique4" value="option4"> Calming Breathing (7:0:11:0 Tempo)
             </label>
           </div>
 
-            <div class="modal-body">
-            <h4 class="modal-title" id="timingModal">Breathing Duration:</h4>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing1" value="option1"> 1 minute  
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing2" value="option2"> 2 minutes  
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing3" value="option3"> Custom  
-            </label>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class=" modal-btn">Let's Start</button>
+            <div class="modal-body-2">
+                <h4 class="modal-title" id="customModal"><button class="custom-btn" id="custom-btn">Custom</button></h4>
+                    <div id="range-labels">
+                        <label for="inhale"> Inhale </label><br>
+                        
+                            <input type="range" name="inhaleTime" class="slider-range" id="inhale" min="0" max="20" value="4"><br>
+                        <label for="inhale-hold"> Hold </label> <br>
+                        
+                            <input type="range" name="inhaleHoldTime" class="slider-range" id="inhale-hold" min="0" max="20" value="4"><br>
+                        <label for="exhale"> Exhale </label><br>
+                            <input type="range" name="exhaleTime" class="slider-range" id="exhale" min="0" max="20" value="4"><br>
+                        <label for="exhale-hold"> Hold </label><br>
+                            <input type="range" name="exhaleHoldTime" class="slider-range" id="exhale-hold" min="0" max="20" value="4">
+                    </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class=" modal-btn ">Let's Start</button>
           </div>
           
         </div>

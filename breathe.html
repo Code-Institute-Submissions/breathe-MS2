@@ -19,8 +19,8 @@
 
     <div class="breathe-timer">
         
-        <div class="breathe-circle ">
-            <span class="inhale-exhale " id="inhale-exhale">0</span><br>
+        <div class="row breathe-circle ">
+            <span class="col-12 text-center inhale-exhale" id="inhale-exhale">0</span><br>
 
             <button class="start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
             <button class="pause-btn" id="pause-btn"><i class="far fa-pause-circle"></i></button>
@@ -36,38 +36,44 @@
       <div class="modal-dialog ">
         <div class="modal-content breathe-modal justify-content-center">
           <div class="modal-header">
-            <p class="site-logo-modal" href="index.html">Breathe</p>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            
+            <button type="button" class="close" id="close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             
           </div>
-          <div class="modal-body ">
+          <div class="modal-body-1">
             <h4 class="modal-title" id="breathingModal">Breathing Technique:</h4>
             <p>(Please select one)</p>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Technique 1 
+              <input type="radio" name="breathingOptions" id="Technique1" value="option1"> Box Breathing 
             </label>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Technique 2 
+              <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Relaxing Breathing 
+            </label> <br>
+            <label class="radio-inline">
+              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Rhythmic Breathing 
             </label>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Technique 3 
+              <input type="radio" name="breathingOptions" id="Technique4" value="option4"> Calming Breathing
             </label>
           </div>
 
-            <div class="modal-body">
-            <h4 class="modal-title" id="timingModal">Breathing Duration:</h4>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing1" value="option1"> 1 minute  
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing2" value="option2"> 2 minutes  
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="timingOptions" id="Timing3" value="option3"> Custom  
-            </label>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class=" modal-btn">Let's Start</button>
+            <div class="modal-body-2">
+                <h4 class="modal-title" id="customModal"><button class="custom-btn" id="custom-btn">Custom</button></h4>
+                    <div id="range-labels">
+                        <label for="inhale"> Inhale </label><br>
+                        
+                            <input type="range" name="inhaleTime" class="slider-range" id="inhale" min="0" max="20" value="4"><br>
+                        <label for="inhale-hold"> Hold </label> <br>
+                        
+                            <input type="range" name="inhaleHoldTime" class="slider-range" id="inhale-hold" min="0" max="20" value="4"><br>
+                        <label for="exhale"> Exhale </label><br>
+                            <input type="range" name="exhaleTime" class="slider-range" id="exhale" min="0" max="20" value="4"><br>
+                        <label for="exhale-hold"> Hold </label><br>
+                            <input type="range" name="exhaleHoldTime" class="slider-range" id="exhale-hold" min="0" max="20" value="4">
+                    </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class=" modal-btn ">Let's Start</button>
           </div>
           
         </div>
@@ -75,6 +81,7 @@
     </div>
         
 
+    
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
