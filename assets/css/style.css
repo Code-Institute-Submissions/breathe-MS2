@@ -64,6 +64,7 @@ float: left;
 /*Hero Image */
 .hero-image {
     background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat bottom left fixed ;
+    opacity: 0.8;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -95,8 +96,8 @@ float: left;
     margin: 0 auto;
     font-size: 1.5em;
     color: #F3F3F3;
-    background-color: #3c403dba ;
-    border: none;
+    background-color: transparent ;
+    border: 2px solid #F3F3F3;
     border-radius: 12px;
     transition-duration: 0.4s;
 }
@@ -149,6 +150,7 @@ footer {
 /*Styling the Modal*/
 .modal-header {
     border-bottom: 1px solid #3C403D;
+    padding: 0;
 }
 .modal-footer {
     border-top: 1px solid #3C403D;
@@ -164,6 +166,11 @@ footer {
 
 .breathe-modal {
     width: fit-content;
+    
+}
+
+.modal-body-1, .modal-body-2 {
+    margin: 0 auto;
 }
 
 .site-logo-modal{
@@ -176,6 +183,29 @@ footer {
 .breathe-modal-body {
     border-top: #3C403D ;
 }
+.modal-body-1, .modal-body-2 {
+    width: 80%;
+}
+
+.slider-range {
+    width: 100%;
+    -webkit-appearance: none;
+    background: #3C403D;
+    border-radius: 12px;
+    box-shadow: 0px 1px 10px 1px black;
+}
+
+
+.slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    background: #F3F3F3;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 
 .modal-dialog {
     display: flex;
@@ -190,24 +220,27 @@ footer {
     color: #3C403D ;
 }
 
-
 /*breathe.html*/
 .breathe-timer {
     margin: 50px auto;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 50%;
+    vertical-align: middle;
+    width: 60%;
 
 }
 
 .breathe-circle {
-    height: 15em;
-    width: 15em;
-    background-color: transparent;
+    height: 25em;
+    width: 25em;
+    background-color: #DADED4 ;
     border: 3px solid #202020;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 .settings-btn {
@@ -217,3 +250,8 @@ footer {
 
 }
 
+.circle-btn {
+    border:none;
+    background-color: #DADED4;
+    font-size: 1.5em;
+}

@@ -1,7 +1,5 @@
 $(document).ready(function(){
-    $("#breathing-info-1, #breathing-info-2, #breathing-info-3, #breathing-info-4").hide();
-
-    
+    $("#breathing-info-1, #breathing-info-2, #breathing-info-3").hide();
 });
 
 $("#more-info-btn-1").click(function(){
@@ -15,6 +13,14 @@ $("#more-info-btn-2").click(function(){
 $("#more-info-btn-3").click(function(){
         $("#breathing-info-3").toggle();
     });    
-$("#more-info-btn-4").click(function(){
-        $("#breathing-info-4").toggle();
-    });    
+  
+
+$("#range-labels").hide();
+
+$("#custom-btn").click(function(){
+    $("#range-labels").toggle();
+})
+
+$("#close-btn").click(function(){
+    $("#range-labels").hide();
+})

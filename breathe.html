@@ -13,18 +13,18 @@
 <body>
     <div class="container-fluid nav-container">
        <nav class="navbar navbar-fixed-top navbar-light breathe-navbar">
-            <a class="site-logo" href="x">Breathe</a>
+            <a class="site-logo" href="index.html">Breathe</a>
         </nav>
     </div>
 
     <div class="breathe-timer">
         
-        <div class="row breathe-circle ">
-            <span class="col-12 text-center inhale-exhale" id="inhale-exhale">0</span><br>
+        <div class="row breathe-circle">
+            <span class="col-12 text-center inhale-exhale" id="inhale-exhale"><strong>Press play to begin</strong></span><br>
 
-            <button class="start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
-            <button class="pause-btn" id="pause-btn"><i class="far fa-pause-circle"></i></button>
-            <button type ="button" class="settings-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><h1><i class="fas fa-cog"></i></h1></button>
+            <button class="circle-btn start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
+            <button class="circle-btn pause-btn" id="pause-btn"><i class="far fa-pause-circle"></i></button>
+            <button type ="button" class="circle-btn settings-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><h1><i class="fas fa-cog"></i></h1></button>
 
         </div>  
 
@@ -50,10 +50,7 @@
               <input type="radio" name="breathingOptions" id="Technique2" value="option2"> Relaxing Breathing 
             </label> <br>
             <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Rhythmic Breathing 
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="breathingOptions" id="Technique4" value="option4"> Calming Breathing
+              <input type="radio" name="breathingOptions" id="Technique3" value="option3"> Calming Breathing
             </label>
           </div>
 
