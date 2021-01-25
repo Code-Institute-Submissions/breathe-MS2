@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Navbar Styling */
 .site-logo {
-    color: #3C403D ;
+    color: #a3dcbe   ;
     font-size: 2em;
     font-weight: 800;
     margin-left: 2em;
@@ -63,24 +63,34 @@ float: left;
 
 /*Hero Image */
 .hero-image {
-    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat bottom left fixed ;
-    opacity: 0.8;
+    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat bottom left fixed ;  
     height: 100vh;
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-size: cover;
+    z-index: 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+.dark-overlay {
+    background-image: linear-gradient(268deg, rgba(0, 0, 0, 0.3) 22%, rgba(0, 0, 0, 0.6) 87%);
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+}
 
 .jumbotron {
     background-color: transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
 
 .jumbotron-text {
     color: #F3F3F3 ;
@@ -103,7 +113,8 @@ float: left;
 }
 
 .jumbotron-btn:hover {
-    background-color: #3C403D  ;
+    color: #3C403D  ;
+    background-color: #F3F3F3;
 }
 
 /* Techniques section */ 
@@ -147,6 +158,8 @@ footer {
 .list-group-item a:hover {
     color: #202020   ;
 }
+
+
 /*Styling the Modal*/
 .modal-header {
     border-bottom: 1px solid #3C403D;
