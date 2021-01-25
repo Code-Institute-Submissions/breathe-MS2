@@ -1,4 +1,6 @@
-$("#range-labels").hide();
+$(document).ready(function () {
+    $("#range-labels").hide();
+});
 
 $("#custom-btn").click(function () {
     $("#range-labels").toggle();
@@ -8,6 +10,8 @@ $("#close-btn").click(function () {
     $("#range-labels").hide();
 })
 
+
+/*Set variables & create getBreathText() function */
 const inhaleExhale = document.getElementById("inhale-exhale");
 const startBtn = document.getElementById("start-btn");
 const pauseBtn = document.getElementById("pause-btn");
@@ -16,7 +20,45 @@ let seconds = 0;
 let intervalID;
 
 
-function getBreathText(elapsedSeconds, breathType){
+
+startBtn.addEventListener("click", function () {
+    startBreathing();
+})
+
+pauseBtn.addEventListener("click", function () {
+    clearInterval(intervalID);
+})
+
+
+
+const submitBtn = document.getElementById("modal-btn");
+
+submitBtn.addEventListener("click", function () {
+    // start breathing
+    startBreathing();
+
+    // TODO: close modal
+});
+
+function startBreathing() {
+    let breathingType = getSelectedBreathingType();
+
+    if (intervalID) {
+        clearInterval(intervalID);
+    }
+
+    intervalID = setInterval(function () {
+        console.log(seconds);
+
+        let text = getBreathText(seconds, breathingType);
+
+        inhaleExhale.textContent = text;
+
+        seconds += 1;
+    }, 1000);
+}
+
+function getBreathText(elapsedSeconds, breathType) {
     let breathDuration = breathType.inhale + breathType.hold1 + breathType.exhale + breathType.hold2;
     let breathSeconds = elapsedSeconds % breathDuration;
 
@@ -41,44 +83,52 @@ function getBreathText(elapsedSeconds, breathType){
     return text;
 }
 
-startBtn.addEventListener("click", function () {
-    if (intervalID) {
-        clearInterval(intervalID);
+function getSelectedBreathingType() {
+    let box = {
+        inhale: 4,
+        hold1: 4,
+        exhale: 4,
+        hold2: 4
+    };
+
+    let relax = {
+        inhale: 4,
+        hold1: 7,
+        exhale: 8,
+        hold2: 0
+    };
+
+    let calm = {
+        inhale: 7,
+        hold1: 0,
+        exhale: 11,
+        hold2: 0
+    };
+    
+    let boxBreathing = document.getElementById("boxBreathing");
+    let relaxBreathing = document.getElementById("relaxBreathing");
+    let calmBreathing = document.getElementById("calmBreathing");
+
+
+    if (boxBreathing.checked) {
+        return box;
     }
-
-    intervalID = setInterval(function () {
-        
-        console.log(seconds);
-
-        let relax = {
-            inhale: 4,
-            hold1: 7,
-            exhale: 8,
-            hold2: 0
-        };
-        let box = {
-            inhale: 4,
-            hold1: 4,
-            exhale:4,
-            hold2: 4
-        };
-        let calm = {
-            inhale: 7,
-            hold1: 0,
-            exhale: 11,
-            hold2: 0
-        };
+    else if (relaxBreathing.checked) {
+        return relax;
+    }
+    else if (calmBreathing.checked) {
+        return calm;
+    }
+    // default to box breathing
+    else {
+        return box;
+    }
+}
 
 
-        let text = getBreathText(seconds, box);
+/*
+submitBtn.addEventListener("click", function(){
+    getBreathText(seconds, box);
 
-        inhaleExhale.textContent = text;
-
-        seconds += 1;
-    }, 1000);
-})
-
-pauseBtn.addEventListener("click", function () {
-    clearInterval(intervalID);
-})
+}) */
 
