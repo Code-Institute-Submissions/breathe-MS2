@@ -2,8 +2,12 @@ $(document).ready(function () {
     $("#range-labels").hide();
 });
 
-$("#custom-btn").click(function () {
-    $("#range-labels").toggle();
+$("#customBreathing").click(function () {
+    $("#range-labels").show();
+})
+
+$("#boxBreathing, #relaxBreathing, #calmBreathing").click(function () {
+    $("#range-labels").hide();
 })
 
 $("#close-btn").click(function () {
@@ -104,11 +108,12 @@ function getSelectedBreathingType() {
         exhale: 11,
         hold2: 0
     };
+
     
     let boxBreathing = document.getElementById("boxBreathing");
     let relaxBreathing = document.getElementById("relaxBreathing");
     let calmBreathing = document.getElementById("calmBreathing");
-
+    let customBreathing = document.getElementById("customBreathing");
 
     if (boxBreathing.checked) {
         return box;
@@ -119,12 +124,56 @@ function getSelectedBreathingType() {
     else if (calmBreathing.checked) {
         return calm;
     }
+    else if (customBreathing.checked) {
+        return getCustomBreathingType();
+    }
     // default to box breathing
     else {
         return box;
     }
-}
+};
 
+function getCustomBreathingType() {
+    return {
+        inhale: parseInt(document.getElementById("inhale").value),
+        hold1: parseInt(document.getElementById("inhale-hold").value),
+        exhale: parseInt(document.getElementById("exhale").value),
+        hold2: parseInt(document.getElementById("exhale-hold").value),
+    };
+};
+
+/*Modal closes when submit button clicked*/
 $("#modal-btn").click(function(){
     $("#letsBreathe").modal("hide");
 })
+
+
+
+/* Values from custom slider */
+var sliderInhale = document.getElementById("inhale");
+var sliderInhaleHold = document.getElementById("inhale-hold");
+var sliderExhale = document.getElementById("exhale");
+var sliderExhaleHold = document.getElementById("exhale-hold");
+
+var output1 = document.getElementById("inhaleValue");
+var output2 = document.getElementById("inhaleHoldValue");
+var output3 = document.getElementById("exhaleValue");
+var output4 = document.getElementById("exhaleHoldValue");
+
+output1.innerHTML = sliderInhale.value;
+sliderInhale.oninput = function(){
+    output1.innerHTML = this.value;
+}
+output2.innerHTML = sliderInhaleHold.value;
+sliderInhaleHold.oninput = function(){
+    output2.innerHTML = this.value;
+}
+output3.innerHTML = sliderExhale.value;
+sliderExhale.oninput = function(){
+    output3.innerHTML = this.value;
+}
+output4.innerHTML = sliderExhaleHold.value;
+sliderExhaleHold.oninput = function(){
+    output4.innerHTML = this.value;
+}
+
