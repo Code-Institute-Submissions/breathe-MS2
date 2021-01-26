@@ -119,29 +119,20 @@ float: left;
 }
 
 /* Techniques section */ 
-.breathing-info-container {
-    margin: 2em;
-}
-
 .breathing-technique-h1 {
     margin-bottom: 0.5em;
     font-size: 2em;
 }
-.breathing-technique-h2 {
-    border: 0.5em;
-    width: 33%;
+
+.breathing-icon {
+    font-size: 2em;
+    color: #a3dcbe ;
 }
-.info-btn {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 1em;
-    color: #F3F3F3;
-    background-color: #3c403dba ;
-    border: none;
-    border-radius: 12px;  
+.breathing-technique-container {
+    border: 1px solid #a3dcbe;
+    margin-bottom: 2em;
 }
+
 
 /* Footer */
 footer {
