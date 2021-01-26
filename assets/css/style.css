@@ -18,8 +18,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 } 
 
-.grey-hr {
-    border: 2px solid #3C403D ;
+.green-hr {
+    border: 2px solid #a3dcbe  ;
     border-radius: 15px;
     width: 66%;
     margin-left: auto;
@@ -31,12 +31,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #a3dcbe   ;
     font-size: 2em;
     font-weight: 800;
-    margin-left: 2em;
+    margin-left: 5vw;
+    margin-top: 0.5em
 }
 
 a:hover {
     text-decoration: none;
-    color: #3C403D;
+    color: #a3dcbe;
 }
 .nav-container {
     position: absolute;
@@ -81,6 +82,7 @@ float: left;
     position: absolute;
     inset: 0px;
     z-index: -1;
+    display: flex;
 }
 
 .jumbotron {
@@ -158,7 +160,6 @@ footer {
     color: #a3dcbe ;
 }
 
-
 /*Styling the Modal*/
 .modal-header {
     border-bottom: 1px solid #3C403D;
@@ -207,7 +208,6 @@ footer {
     box-shadow: 0px 1px 10px 1px black;
 }
 
-
 .slider-range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -217,7 +217,6 @@ footer {
     border-radius: 50%;
     cursor: pointer;
 }
-
 
 .modal-dialog {
     display: flex;
@@ -238,25 +237,24 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
     width: 60%;
-
 }
 
 .breathe-circle {
     height: 25em;
     width: 25em;
     background-color: #DADED4 ;
-    border: 3px solid #202020;
+    border: 4px solid #202020;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: center;
+    flex-direction: column;
 }
 
 .inhale-exhale {
-    font-size: 2em;;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 .settings-btn {

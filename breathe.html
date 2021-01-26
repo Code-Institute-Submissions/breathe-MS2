@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/sandstone/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
 <title>Breathe</title>
 </head>
 <body>
@@ -19,13 +20,15 @@
 
     <div class="breathe-timer">
         
-        <div class="row breathe-circle">
-            <span class="col-12 text-center inhale-exhale" id="inhale-exhale"><strong>Press play to begin</strong></span><br>
-
-            <button class="circle-btn start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
-            <button class="circle-btn pause-btn" id="pause-btn"><i class="far fa-pause-circle"></i></button>
-            <button type ="button" class="circle-btn settings-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><h1><i class="fas fa-cog"></i></h1></button>
-
+        <div class="breathe-circle ">
+            <div class="row">
+            <span class="text-center inhale-exhale" id="inhale-exhale"><strong>Press play to begin</strong></span><br>
+            </div>
+            <div class="row">
+            <button type="button" class="circle-btn start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
+            <button type="button" class="circle-btn pause-btn" id="pause-btn"><i class="far fa-pause-circle"></i></button>
+            <button type ="button" class="circle-btn settings-btn justify-content-center" data-toggle="modal" data-target="#letsBreathe"><i class="fas fa-cog"></i></button>
+            </div>
         </div>  
 
     </div>
@@ -55,16 +58,16 @@
             <label class="radio-inline">
               <input type="radio" name="breathingOptions" id="customBreathing" value="custom"> Custom Breathing
                 <div id="range-labels">
-                    <label for="inhale"> Inhale <p>Value: <span id="inhaleValue"></span></p></label><br>    
+                    <label for="inhale"> Inhale: <span id="inhaleValue"></span></label><br>    
                         <input type="range" name="inhaleTime" class="slider-range" id="inhale" min="0" max="20" value="4">
                         <br>
-                    <label for="inhale-hold"> Hold </label><p>Value: <span id="inhaleHoldValue"></span></p> <br>
+                    <label for="inhale-hold"> Hold: </label><span id="inhaleHoldValue"></span> <br>
                         <input type="range" name="inhaleHoldTime" class="slider-range" id="inhale-hold" min="0" max="20" value="4"><br>
 
-                    <label for="exhale"> Exhale </label><p>Value: <span id="exhaleValue"></span></p><br>
+                    <label for="exhale"> Exhale: </label><span id="exhaleValue"></span><br>
                         <input type="range" name="exhaleTime" class="slider-range" id="exhale" min="0" max="20" value="4"><br>
 
-                    <label for="exhale-hold"> Hold </label><p>Value: <span id="exhaleHoldValue"></span></p><br>
+                    <label for="exhale-hold"> Hold: </label><span id="exhaleHoldValue"></span><br>
                         <input type="range" name="exhaleHoldTime" class="slider-range" id="exhale-hold" min="0" max="20" value="4">
                 </div>
             </label>

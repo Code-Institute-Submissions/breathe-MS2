@@ -147,7 +147,23 @@ $("#modal-btn").click(function(){
     $("#letsBreathe").modal("hide");
 })
 
+/* Only display play or pause button*/
+$("#pause-btn").hide();
 
+$("#start-btn").click(function(){
+    $("#start-btn").hide();
+    $("#pause-btn").show();
+})
+
+$("#pause-btn").click(function(){
+    $("#pause-btn").hide();
+    $("#start-btn").show();
+})
+
+$("#modal-btn").click(function(){
+    $("#start-btn").hide();
+    $("#pause-btn").show();
+})
 
 /* Values from custom slider */
 var sliderInhale = document.getElementById("inhale");

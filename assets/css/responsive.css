@@ -1,0 +1,47 @@
+@media only screen and (max-width: 1024px){
+    .breathe-circle {
+        height: 60vw;
+        width: 60vw;
+        border-radius: 50%;
+        margin-top: 10vh;
+    }
+    .breathing-info-container{
+        padding: 0;
+        margin: 0;
+    }
+    .inhale-exhale {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 768px)
+and (max-width: 1024px){
+    .breathe-circle {
+    height: 50vw;
+    width: 50vw;
+    border-radius: 50%;
+    margin-top: 10vh;
+}
+.start-btn, .pause-btn, .settings-btn {
+    font-size: 2em;
+}
+.site-logo {
+    font-size: 2em;
+}
+}
+
+@media only screen and (max-width : 992px) {
+.hero-image {
+    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image-1200pxMaxWidth.jpg") no-repeat bottom center fixed ;  
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    z-index: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	}
