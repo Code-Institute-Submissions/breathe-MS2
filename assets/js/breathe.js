@@ -125,10 +125,6 @@ function getSelectedBreathingType() {
     }
 }
 
-
-/*
-submitBtn.addEventListener("click", function(){
-    getBreathText(seconds, box);
-
-}) */
-
+$("#modal-btn").click(function(){
+    $("#letsBreathe").modal("hide");
+})
