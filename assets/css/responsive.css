@@ -44,4 +44,14 @@ and (max-width: 1024px){
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-	}
+    }
+    
+@media only screen and (max-width : 768px) {
+    .techniques-img {
+        display: none;
+    }
+    .breathing-technique-container {
+        border: 1px solid #a3dcbe; 
+        padding: 1em;
+    }
+} 
