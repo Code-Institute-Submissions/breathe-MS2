@@ -19,6 +19,7 @@ $("#close-btn").click(function () {
 const inhaleExhale = document.getElementById("inhale-exhale");
 const startBtn = document.getElementById("start-btn");
 const pauseBtn = document.getElementById("pause-btn");
+const settingsBtn = document.getElementById("settings-btn")
 
 let seconds = 0;
 let intervalID;
@@ -30,6 +31,9 @@ startBtn.addEventListener("click", function () {
 })
 
 pauseBtn.addEventListener("click", function () {
+    clearInterval(intervalID);
+})
+settingsBtn.addEventListener("click", function () {
     clearInterval(intervalID);
 })
 
@@ -163,6 +167,11 @@ $("#pause-btn").click(function(){
 $("#modal-btn").click(function(){
     $("#start-btn").hide();
     $("#pause-btn").show();
+})
+
+$("#settings-btn").click(function(){
+    $("#pause-btn").hide();
+    $("#start-btn").show();
 })
 
 /* Values from custom slider */
