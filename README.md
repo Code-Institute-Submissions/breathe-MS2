@@ -16,13 +16,15 @@ I wanted this project to be completely different from my MS1 and something that 
         * [Wireframes](#Wireframes)
     * [Features](#Features)
         * [index.html Page](#index.html-Page)
-        * [Modal](#Modal)
         * [breathe.html Page](#breathe.html-Page)
-    
+        * [Modal](#Modal)
 
  
 ## User Experience
- 
+ This website will target a wide range of people that are looking for different things from this website; some will want it for stres reduction, others to enhance their concentration and performance,
+  while some may just want to take a few minutes to relax. The main focus of this site will be to get them started with their breathing exercise of choice so there won't be a lot of content to take 
+  away from that.
+
 ### The Strategy Plane
 This project was created to show the skills I have acquired in Javascript and jQuery since completing my MS1 and to provide all users a means of taking a time out from their hectic 
 lives to focus on their breathing for a set amount of time.
@@ -55,8 +57,8 @@ for the headings, and <a href="https://fonts.google.com/specimen/Roboto">Roboto<
 The colours used in the website will be #F3F3F3 (white), #202020 (black), #3C403D (brown grey), #a3dcbe (green cyan) and #DADED4 (Tanly)
 
 ### Logo
-Using <a href="https://www.freelogodesign.org/">Free Logo Design</a>, I created the following logo for my site Breathe:
-![Site Logo](assets/images/logo/breathe-logo.png)
+Using the colour #a3dcbe and the font Roboto with font-weight 800, I created the font logo "Breathe". <br> 
+![Breathe Logo](assets/images/logo/site-logo.PNG)
 
 ### Wireframes 
 Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for my website. 
@@ -74,24 +76,25 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Features
 ### index.html Page
-- Sticky header containing site logo on top Left
+- Transparent header containing site logo on top Left
 - Hero image taking up 100vh 
-- Under the hero image, heading and four text areas detailing the different breathing practises 
-- Button in the centre of the hero image to open up modal 
+- Transparent jumbotron in the centre of the hero image with text and button leading to breathe.html page 
+- Under the hero image, heading and three text areas detailing the different breathing practises 
+- An image in the breathing techniques container
 - Footer to include social media links to open in separate tab
-
-### Modal
-- Modal content to include radio buttons to make choice on technique and time
-- Modal content to include submit button to start breathing exercise on breathe.html page
-- Modal to include "exit" button to return to index.html page
 
 ### breathe.html Page
 - Site logo which contains an anchor tag to the index.html page
-- Play/ pause button to control the breathing exercise
-- Volume on/off button to control whether music is playing or not
-- Settings button to bring you back to modal content
+- Circle with breathing prompts
+- Play/ pause button in the circle to control the breathing exercise
+- Settings button to bring you to modal box
 
- 
+ ### Modal
+- Modal content to include radio buttons to make choice of technique
+- Fourth radio button is custom choice which when selected gives drop down range sliders for inhale, hold, exhale, hold
+- Modal content to include submit button to start breathing exercise on breathe.html page
+- Modal to include "exit" button to return to breathe.html page
+
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...

@@ -61,7 +61,7 @@ a:hover {
 
 /*Hero Image */
 .hero-image {
-    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image.jpg") no-repeat bottom left fixed ;  
+    background: url("/workspace/breathe-MS2/assets/images/hero-image/hero-image-1200pxMaxWidth.jpg") no-repeat bottom left fixed;  
     height: 100vh;
     width: 100%;
     position: relative;
@@ -74,6 +74,7 @@ a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
 .dark-overlay {
     background-image: linear-gradient(268deg, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.6) 90%);
     position: absolute;
@@ -122,7 +123,7 @@ a:hover {
 }
 
 .breathing-icon {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #a3dcbe ;
 }
 
@@ -177,7 +178,6 @@ footer {
 
 .breathe-modal {
     width: fit-content;
-    
 }
 
 .modal-body-1, .modal-body-2 {
