@@ -14,18 +14,16 @@ $("#close-btn").click(function () {
     $("#range-labels").hide();
 })
 
-
 /*Set variables & create getBreathText() function */
-const inhaleExhale = document.getElementById("inhale-exhale");
+const inhaleExhale = document.getElementById("inhale-exhale-text");
 const startBtn = document.getElementById("start-btn");
 const pauseBtn = document.getElementById("pause-btn");
-const settingsBtn = document.getElementById("settings-btn")
+const settingsBtn = document.getElementById("settings-btn");
 
 let seconds = 0;
 let intervalID;
 
-
-
+/*Adding click functions to buttons*/
 startBtn.addEventListener("click", function () {
     startBreathing();
 })
@@ -37,15 +35,11 @@ settingsBtn.addEventListener("click", function () {
     clearInterval(intervalID);
 })
 
-
-
-const submitBtn = document.getElementById("modal-btn");
+const submitBtn = document.getElementById("modal-submit-btn");
 
 submitBtn.addEventListener("click", function () {
-    // start breathing
+    // start breathing    
     startBreathing();
-
-    // TODO: close modal
 });
 
 function startBreathing() {
@@ -147,7 +141,7 @@ function getCustomBreathingType() {
 };
 
 /*Modal closes when submit button clicked*/
-$("#modal-btn").click(function(){
+$("#modal-submit-btn").click(function(){
     $("#letsBreathe").modal("hide");
 })
 
@@ -163,8 +157,8 @@ $("#pause-btn").click(function(){
     $("#pause-btn").hide();
     $("#start-btn").show();
 })
-
-$("#modal-btn").click(function(){
+/* Only display play or pause button*/
+$("#modal-submit-btn").click(function(){
     $("#start-btn").hide();
     $("#pause-btn").show();
 })

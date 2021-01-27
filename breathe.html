@@ -22,7 +22,7 @@
         
         <div class="breathe-circle ">
             <div class="row">
-            <span class="text-center inhale-exhale" id="inhale-exhale"><strong>Press play to begin</strong></span><br>
+            <span class="text-center inhale-exhale" id="inhale-exhale-text"><strong>Press play to begin</strong></span><br>
             </div>
             <div class="row">
             <button type="button" class="circle-btn start-btn" id="start-btn"><i class="far fa-play-circle "></i></button>
@@ -57,7 +57,7 @@
             </label>
             <label class="radio-inline">
               <input type="radio" name="breathingOptions" id="customBreathing" value="custom"> Custom Breathing
-                <div id="range-labels">
+                <div id="range-labels" class="range-labels">
                     <label for="inhale"> Inhale: <span id="inhaleValue"></span></label><br>    
                         <input type="range" name="inhaleTime" class="slider-range" id="inhale" min="0" max="20" value="4">
                         <br>
@@ -74,7 +74,7 @@
           </div>
    
             <div class="modal-footer justify-content-center">
-                <button type="submit" class="modal-btn" id="modal-btn" name="submitBtn" >Let's Start</button>
+                <button type="submit" class="modal-btn" id="modal-submit-btn" name="submitBtn" >Let's Start</button>
           </div>
           
         </div>

@@ -1,4 +1,4 @@
 $(document).ready(function(){
-$(".breathing-technique-icons").click(function(){
-    $(".breathing-technique-icons").grow();
-});
+$(".breathing-technique-icons").hover(function(){
+    $(".breathing-icon").css("color", "red");
+})
