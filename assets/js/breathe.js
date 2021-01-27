@@ -20,7 +20,7 @@ const startBtn = document.getElementById("start-btn");
 const pauseBtn = document.getElementById("pause-btn");
 const settingsBtn = document.getElementById("settings-btn");
 
-let seconds = 0;
+
 let intervalID;
 
 /*Adding click functions to buttons*/
@@ -35,6 +35,10 @@ settingsBtn.addEventListener("click", function () {
     clearInterval(intervalID);
 })
 
+$("#pause-btn, #settings-btn").click(function(){
+    inhaleExhale.textContent = "Please press play to begin"
+})
+
 const submitBtn = document.getElementById("modal-submit-btn");
 
 submitBtn.addEventListener("click", function () {
@@ -42,14 +46,31 @@ submitBtn.addEventListener("click", function () {
     startBreathing();
 });
 
+
 function startBreathing() {
     let breathingType = getSelectedBreathingType();
+    let seconds = 0;
 
     if (intervalID) {
         clearInterval(intervalID);
     }
 
-    intervalID = setInterval(function () {
+    inhaleExhale.textContent = "";
+
+    setTimeout(function() {
+        inhaleExhale.textContent = "3...";
+    }, 500);
+
+    setTimeout(function() {
+        inhaleExhale.textContent = "2...";
+    }, 1500);
+
+    setTimeout(function() {
+        inhaleExhale.textContent = "1...";
+    }, 2500);
+    
+    setTimeout(function() {
+        intervalID = setInterval(function () {
         console.log(seconds);
 
         let text = getBreathText(seconds, breathingType);
@@ -58,7 +79,12 @@ function startBreathing() {
 
         seconds += 1;
     }, 1000);
+    
+
+    
+    }, 2500);
 }
+
 
 function getBreathText(elapsedSeconds, breathType) {
     let breathDuration = breathType.inhale + breathType.hold1 + breathType.exhale + breathType.hold2;
@@ -107,7 +133,6 @@ function getSelectedBreathingType() {
         hold2: 0
     };
 
-    
     let boxBreathing = document.getElementById("boxBreathing");
     let relaxBreathing = document.getElementById("relaxBreathing");
     let calmBreathing = document.getElementById("calmBreathing");
