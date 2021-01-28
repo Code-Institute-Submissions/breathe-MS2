@@ -58,15 +58,15 @@ function startBreathing() {
     inhaleExhale.textContent = "";
 
     setTimeout(function() {
-        inhaleExhale.textContent = "3...";
+        inhaleExhale.textContent = "3";
     }, 500);
 
     setTimeout(function() {
-        inhaleExhale.textContent = "2...";
+        inhaleExhale.textContent = "2";
     }, 1500);
 
     setTimeout(function() {
-        inhaleExhale.textContent = "1...";
+        inhaleExhale.textContent = "1";
     }, 2500);
     
     setTimeout(function() {
@@ -202,29 +202,17 @@ var output2 = document.getElementById("inhaleHoldValue");
 var output3 = document.getElementById("exhaleValue");
 var output4 = document.getElementById("exhaleHoldValue");
 
-/*
-function getCustomValue(breathType, breathValue) {
-    output.innerHTML = slider.value;
+/* Create function to get value from slider */
+function getValueFromSlider(slider, value) {
+    value.innerHTML = slider.value;
     slider.oninput = function(){
-        output.innerHTML = this.value;
+        value.innerHTML = this.value;
     }
 }
-*/
 
-output1.innerHTML = sliderInhale.value;
-sliderInhale.oninput = function(){
-    output1.innerHTML = this.value;
-}
-output2.innerHTML = sliderInhaleHold.value;
-sliderInhaleHold.oninput = function(){
-    output2.innerHTML = this.value;
-}
-output3.innerHTML = sliderExhale.value;
-sliderExhale.oninput = function(){
-    output3.innerHTML = this.value;
-}
-output4.innerHTML = sliderExhaleHold.value;
-sliderExhaleHold.oninput = function(){
-    output4.innerHTML = this.value;
-}
+getValueFromSlider(sliderInhale, output1);
+getValueFromSlider(sliderInhaleHold, output2);
+getValueFromSlider(sliderExhale, output3);
+getValueFromSlider(sliderExhaleHold, output4);
+
 
