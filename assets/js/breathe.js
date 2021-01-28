@@ -17,7 +17,7 @@ $("#close-btn").click(function () {
 /*Set variables & create getBreathText() function */
 const inhaleExhale = document.getElementById("inhale-exhale-text");
 const startBtn = document.getElementById("start-btn");
-const pauseBtn = document.getElementById("pause-btn");
+const stopBtn = document.getElementById("stop-btn");
 const settingsBtn = document.getElementById("settings-btn");
 
 
@@ -28,14 +28,14 @@ startBtn.addEventListener("click", function () {
     startBreathing();
 })
 
-pauseBtn.addEventListener("click", function () {
+stopBtn.addEventListener("click", function () {
     clearInterval(intervalID);
 })
 settingsBtn.addEventListener("click", function () {
     clearInterval(intervalID);
 })
 
-$("#pause-btn, #settings-btn").click(function(){
+$("#stop-btn, #settings-btn").click(function(){
     inhaleExhale.textContent = "Please press play to begin"
 })
 
@@ -168,26 +168,26 @@ $("#modal-submit-btn").click(function(){
     $("#letsBreathe").modal("hide");
 })
 
-/* Only display play or pause button*/
-$("#pause-btn").hide();
+/* Only display play or stop button*/
+$("#stop-btn").hide();
 
 $("#start-btn").click(function(){
     $("#start-btn").hide();
-    $("#pause-btn").show();
+    $("#stop-btn").show();
 })
 
-$("#pause-btn").click(function(){
-    $("#pause-btn").hide();
+$("#stop-btn").click(function(){
+    $("#stop-btn").hide();
     $("#start-btn").show();
 })
-/* Only display play or pause button*/
+/* Only display play or stop button*/
 $("#modal-submit-btn").click(function(){
     $("#start-btn").hide();
-    $("#pause-btn").show();
+    $("#stop-btn").show();
 })
 
 $("#settings-btn").click(function(){
-    $("#pause-btn").hide();
+    $("#stop-btn").hide();
     $("#start-btn").show();
 })
 
@@ -201,6 +201,15 @@ var output1 = document.getElementById("inhaleValue");
 var output2 = document.getElementById("inhaleHoldValue");
 var output3 = document.getElementById("exhaleValue");
 var output4 = document.getElementById("exhaleHoldValue");
+
+/*
+function getCustomValue(breathType, breathValue) {
+    output.innerHTML = slider.value;
+    slider.oninput = function(){
+        output.innerHTML = this.value;
+    }
+}
+*/
 
 output1.innerHTML = sliderInhale.value;
 sliderInhale.oninput = function(){
