@@ -3,7 +3,7 @@
         height: 60vw;
         width: 60vw;
         border-radius: 50%;
-        margin-top: 10vh;
+        margin-bottom: 2em;
     }
     .breathing-info-container{
         padding: 0;
@@ -20,7 +20,7 @@ and (max-width: 1024px){
     height: 40vw;
     width: 40vw;
     border-radius: 50%;
-    margin-top: 10vh;
+    
 }
 .start-btn, .pause-btn, .settings-btn {
     font-size: 2em;

@@ -1,51 +1,81 @@
-$(document).ready(function () {
-    $("#range-labels").hide();
-});
-
-$("#customBreathing").click(function () {
-    $("#range-labels").show();
-})
-
-$("#boxBreathing, #relaxBreathing, #calmBreathing").click(function () {
-    $("#range-labels").hide();
-})
-
-$("#close-btn").click(function () {
-    $("#range-labels").hide();
-})
-
 /*Set variables & create getBreathText() function */
 const inhaleExhale = document.getElementById("inhale-exhale-text");
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("stop-btn");
 const settingsBtn = document.getElementById("settings-btn");
 
-
 let intervalID;
 
-/*Adding click functions to buttons*/
-startBtn.addEventListener("click", function () {
-    startBreathing();
-})
+/* Create variables for  linkSliderToSpan() function*/
+let sliderInhale = document.getElementById("inhale");
+let sliderInhaleHold = document.getElementById("inhale-hold");
+let sliderExhale = document.getElementById("exhale");
+let sliderExhaleHold = document.getElementById("exhale-hold");
 
-stopBtn.addEventListener("click", function () {
-    clearInterval(intervalID);
-})
-settingsBtn.addEventListener("click", function () {
-    clearInterval(intervalID);
-})
-
-$("#stop-btn, #settings-btn").click(function(){
-    inhaleExhale.textContent = "Please press play to begin"
-})
+let inhaleSpan = document.getElementById("inhaleValue");
+let inhaleHoldSpan = document.getElementById("inhaleHoldValue");
+let exhaleSpan = document.getElementById("exhaleValue");
+let exhaleHoldSpan = document.getElementById("exhaleHoldValue");
 
 const submitBtn = document.getElementById("modal-submit-btn");
+
+$(document).ready(function () {
+    $("#range-labels").hide();
+});
+
+/* Click events */
+$("#customBreathing").click(function () {
+    $("#range-labels").show();
+});
+
+$("#boxBreathing, #relaxBreathing, #calmBreathing").click(function () {
+    $("#range-labels").hide();
+});
+
+$("#close-btn").click(function () {
+    $("#range-labels").hide();
+});
+
+/*Modal closes when submit button clicked*/
+$("#modal-submit-btn").click(function () {
+    $("#letsBreathe").modal("hide");
+});
+
+/* Only display play or stop button*/
+$("#stop-btn").hide();
+
+/* Only display play or stop button*/
+$("#modal-submit-btn").click(function () {
+    $("#start-btn").hide();
+    $("#stop-btn").show();
+});
+
+/*Adding click functions to buttons*/
+$(startBtn).click(function () {
+    startBreathing();
+    $("#start-btn").hide();
+    $("#stop-btn").show();
+});
+
+$(stopBtn).click(function () {
+    clearInterval(intervalID);
+    $("#stop-btn").hide();
+    $("#start-btn").show();
+});
+settingsBtn.addEventListener("click", function () {
+    clearInterval(intervalID);
+});
+
+$("#stop-btn, #settings-btn").click(function () {
+    inhaleExhale.textContent = "Press play to begin";
+});
 
 submitBtn.addEventListener("click", function () {
     // start breathing    
     startBreathing();
+    $("#stop-btn").hide();
+    $("#start-btn").show();
 });
-
 
 function startBreathing() {
     let breathingType = getSelectedBreathingType();
@@ -57,53 +87,51 @@ function startBreathing() {
 
     inhaleExhale.textContent = "";
 
-    setTimeout(function() {
+    setTimeout(function () {
         inhaleExhale.textContent = "3";
     }, 500);
 
-    setTimeout(function() {
+    setTimeout(function () {
         inhaleExhale.textContent = "2";
     }, 1500);
 
-    setTimeout(function() {
+    setTimeout(function () {
         inhaleExhale.textContent = "1";
     }, 2500);
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
         intervalID = setInterval(function () {
-        console.log(seconds);
+            console.log(seconds);
 
-        let text = getBreathText(seconds, breathingType);
+            let text = getBreathText(seconds, breathingType);
 
-        inhaleExhale.textContent = text;
+            inhaleExhale.textContent = text;
 
-        seconds += 1;
-    }, 1000);
-    
+            seconds += 1;
+        }, 1000);
+
     }, 2500);
 }
 
-
 function getBreathText(elapsedSeconds, breathType) {
-    let breathDuration = breathType.inhale + breathType.hold1 + breathType.exhale + breathType.hold2;
+    let breathDuration = breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold;
     let breathSeconds = elapsedSeconds % breathDuration;
-
     let text;
 
     if (breathSeconds < breathType.inhale) {
-        text = "inhale";
+        text = "Inhale";
     }
     // 1st hold
-    else if (breathSeconds < (breathType.inhale + breathType.hold1)) {
-        text = "hold";
+    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold)) {
+        text = "Hold";
     }
     // 'out'
-    else if (breathSeconds < (breathType.inhale + breathType.hold1 + breathType.exhale)) {
-        text = "exhale";
+    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold + breathType.exhale)) {
+        text = "Exhale";
     }
     // 2nd hold
     else {
-        text = "hold";
+        text = "Hold";
     }
 
     return text;
@@ -112,23 +140,23 @@ function getBreathText(elapsedSeconds, breathType) {
 function getSelectedBreathingType() {
     let box = {
         inhale: 4,
-        hold1: 4,
+        inhaleHold: 4,
         exhale: 4,
-        hold2: 4
+        exhaleHold: 4
     };
 
     let relax = {
         inhale: 4,
-        hold1: 7,
+        inhaleHold: 7,
         exhale: 8,
-        hold2: 0
+        exhaleHold: 0
     };
 
     let calm = {
         inhale: 7,
-        hold1: 0,
+        inhaleHold: 0,
         exhale: 11,
-        hold2: 0
+        exhaleHold: 0
     };
 
     let boxBreathing = document.getElementById("boxBreathing");
@@ -152,67 +180,29 @@ function getSelectedBreathingType() {
     else {
         return box;
     }
-};
+}
 
 function getCustomBreathingType() {
     return {
         inhale: parseInt(document.getElementById("inhale").value),
-        hold1: parseInt(document.getElementById("inhale-hold").value),
+        inhaleHold: parseInt(document.getElementById("inhale-hold").value),
         exhale: parseInt(document.getElementById("exhale").value),
-        hold2: parseInt(document.getElementById("exhale-hold").value),
+        exhaleHold: parseInt(document.getElementById("exhale-hold").value),
     };
-};
-
-/*Modal closes when submit button clicked*/
-$("#modal-submit-btn").click(function(){
-    $("#letsBreathe").modal("hide");
-})
-
-/* Only display play or stop button*/
-$("#stop-btn").hide();
-
-$("#start-btn").click(function(){
-    $("#start-btn").hide();
-    $("#stop-btn").show();
-})
-
-$("#stop-btn").click(function(){
-    $("#stop-btn").hide();
-    $("#start-btn").show();
-})
-/* Only display play or stop button*/
-$("#modal-submit-btn").click(function(){
-    $("#start-btn").hide();
-    $("#stop-btn").show();
-})
-
-$("#settings-btn").click(function(){
-    $("#stop-btn").hide();
-    $("#start-btn").show();
-})
-
-/* Values from custom slider */
-var sliderInhale = document.getElementById("inhale");
-var sliderInhaleHold = document.getElementById("inhale-hold");
-var sliderExhale = document.getElementById("exhale");
-var sliderExhaleHold = document.getElementById("exhale-hold");
-
-var output1 = document.getElementById("inhaleValue");
-var output2 = document.getElementById("inhaleHoldValue");
-var output3 = document.getElementById("exhaleValue");
-var output4 = document.getElementById("exhaleHoldValue");
-
-/* Create function to get value from slider */
-function getValueFromSlider(slider, value) {
-    value.innerHTML = slider.value;
-    slider.oninput = function(){
-        value.innerHTML = this.value;
-    }
 }
 
-getValueFromSlider(sliderInhale, output1);
-getValueFromSlider(sliderInhaleHold, output2);
-getValueFromSlider(sliderExhale, output3);
-getValueFromSlider(sliderExhaleHold, output4);
+
+/* Create function to show value in span */
+function linkSliderValueToSpanText(slider, span) {
+    span.innerHTML = slider.value;
+    slider.oninput = function () {
+        span.innerHTML = this.value;
+    };
+}
+
+linkSliderValueToSpanText(sliderInhale, inhaleSpan);
+linkSliderValueToSpanText(sliderInhaleHold, inhaleHoldSpan);
+linkSliderValueToSpanText(sliderExhale, exhaleSpan);
+linkSliderValueToSpanText(sliderExhaleHold, exhaleHoldSpan);
 
 

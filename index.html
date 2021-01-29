@@ -29,7 +29,7 @@
         <div class="dark-overlay justify-content-center">
             <div class="jumbotron row no-gutters  ">
                 <div class="col-12  jumbotron-content">
-                    <p class="jumbotron-text text-center">Choose your breathing technique</p>
+                    <p class="jumbotron-text text-center">Which breathing technique do you need?</p>
                     <hr class="green-hr">
                     <a href="breathe.html"><button type="button" class="col-12 jumbotron-btn justify-content-center">
                             <h1><strong>Let's Breathe</strong></h1>
@@ -44,10 +44,31 @@
         <div class="container-fluid breathing-info-container ">
             <div class="row breathing-technique-info justify-content-center">
                 <div class="col-12 breathing-technique-h1 text-center">
-                    <h1>Breathing Techniques</h1>
+                    <h1>Breathing Techniques & Practise</h1>
+                </div>
+                    
+
+                    <div class="col-12  col-sm-6 order-2 text-centerbreathe-timer">
+                        <div class="breathe-circle ">
+                            <div class="row">
+                                <span class="text-center inhale-exhale" id="inhale-exhale-text"><strong>Press play to
+                                        begin</strong></span><br>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="circle-btn start-btn" id="start-btn"><i
+                                        class="far fa-play-circle "></i></button>
+                                <button type="button" class="circle-btn stop-btn" id="stop-btn"><i
+                                        class="far fa-stop-circle"></i></button>
+                                <button type="button" class="circle-btn settings-btn justify-content-center"
+                                    id="settings-btn" data-toggle="modal" data-target="#letsBreathe"><i
+                                        class="fas fa-cog"></i></button>
+                            </div>
+                        </div>
+                    
                 </div>
 
-                <div class="col-10 breathing-technique-container col-sm-3  text-center">
+
+                <div class="col-10 breathing-technique-container col-sm-5  text-center">
                     <i id="breathing-icon1" class="fas fa-lungs breathing-icon"></i>
                     <h2 class="text-center breathing-technique-h2"> Box
                         Breathing </h2>
@@ -60,11 +81,8 @@
                         Box breathing should be <strong>repeated four times</strong> in one sitting.
 
                     </p>
-                </div>
 
-                <div class="col-10 breathing-technique-container col-sm-3  text-center">
-                    <img src="assets/images/other/meditate.jpg" alt="meditate" class="img-fluid techniques-img">
-                    <i id="breathing-icon2" class="fas fa-bed breathing-icon"></i>
+                     <i id="breathing-icon2" class="fas fa-bed breathing-icon"></i>
                     <h2 class="text-center breathing-technique-h2"> Relaxing
                         Breathing </h2>
 
@@ -77,11 +95,8 @@
                         This should be practised <strong>twice a day</strong> for best results.
 
                     </p>
-                </div>
 
-
-                <div class="col-10 breathing-technique-container col-sm-3 text-center">
-                    <i id="breathing-icon3" class="fas fa-praying-hands breathing-icon"></i>
+                     <i id="breathing-icon3" class="fas fa-praying-hands breathing-icon"></i>
                     <h2 class="text-center breathing-technique-h2">
                         Calming Breathing </h2>
 
@@ -94,9 +109,12 @@
 
                     </p>
 
+
+                </div>
+
                 </div>
             </div>
-        </div>
+        
     </section>
 
     <footer class="container-fluid footer-container">
@@ -124,10 +142,66 @@
                 </ul>
             </div>
         </div>
+        <!--https://stackoverflow.com/questions/27870042/bootstrap-input-dialog-with-radio-buttons-->
+        <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content breathe-modal justify-content-center">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" id="close-btn" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+
+                    </div>
+                    <div class="modal-body-1">
+                        <h4 class="modal-title" id="breathingModal">Breathing Technique:</h4>
+                        <p>(Please select one)</p>
+                        <label class="radio-inline">
+                            <input type="radio" name="breathingOptions" id="boxBreathing" value="box" checked> Box
+                            Breathing
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="breathingOptions" id="relaxBreathing" value="relax"> Relax
+                            Breathing
+                        </label> <br>
+                        <label class="radio-inline">
+                            <input type="radio" name="breathingOptions" id="calmBreathing" value="calm"> Calm Breathing
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="breathingOptions" id="customBreathing" value="custom"> Custom
+                            <div id="range-labels" class="range-labels">
+                                <label for="inhale"> Inhale: <span id="inhaleValue"></span></label><br>
+                                <input type="range" name="inhaleTime" class="slider-range" id="inhale" min="0" max="20"
+                                    value="4">
+                                <br>
+                                <label for="inhale-hold"> Hold: </label><span id="inhaleHoldValue"></span> <br>
+                                <input type="range" name="inhaleHoldTime" class="slider-range" id="inhale-hold" min="0"
+                                    max="20" value="4"><br>
+
+                                <label for="exhale"> Exhale: </label><span id="exhaleValue"></span><br>
+                                <input type="range" name="exhaleTime" class="slider-range" id="exhale" min="0" max="20"
+                                    value="4"><br>
+
+                                <label for="exhale-hold"> Hold: </label><span id="exhaleHoldValue"></span><br>
+                                <input type="range" name="exhaleHoldTime" class="slider-range" id="exhale-hold" min="0"
+                                    max="20" value="4">
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="modal-btn" id="modal-submit-btn" name="submitBtn">Let's
+                            Start</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/breathe.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

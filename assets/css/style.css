@@ -240,7 +240,7 @@ footer {
     color: #3C403D ;
 }
 
-/*breathe.html*/
+/*breathe circle*/
 
 .breathe-timer {
     margin: 50px auto;
@@ -253,7 +253,6 @@ footer {
 .breathe-circle {
     height: 25em;
     width: 25em;
-    margin-top: 10vh;
     background-color: #DADED4 ;
     border: 4px solid #202020;
     border-radius: 50%;
