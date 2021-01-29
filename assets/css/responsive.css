@@ -17,15 +17,12 @@
 @media only screen and (min-width: 768px)
 and (max-width: 1024px){
     .breathe-circle {
-    height: 50vw;
-    width: 50vw;
+    height: 40vw;
+    width: 40vw;
     border-radius: 50%;
     margin-top: 10vh;
 }
 .start-btn, .pause-btn, .settings-btn {
-    font-size: 2em;
-}
-.site-logo {
     font-size: 2em;
 }
 }
@@ -51,8 +48,26 @@ and (max-width: 1024px){
     .techniques-img{
         display: none;
     }
+    .site-logo {
+    font-size: 2em;
+}
     .breathing-technique-container{
         border: 1px solid #a3dcbe;
         padding: 1em;
+    }
+    .inhale-exhale {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width : 1024px){
+    .jumbotron-text{
+        font-size: 3em;
+    }
+    .jumbotron-btn {
+        font-size: 3em;
+    }
+    .circle-btn {
+        font-size: 2em;
     }
 }

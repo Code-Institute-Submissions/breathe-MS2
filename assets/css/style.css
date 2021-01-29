@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Navbar Styling */
 .site-logo {
     color: #a3dcbe   ;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 800;
     margin-left: 5vw;
     margin-top: 0.5em
@@ -114,15 +114,23 @@ a:hover {
 }
 
 .jumbotron-btn:hover {
-    color: #3C403D  ;
-    background-color: #F3F3F3;
+    color: #a3dcbe  ;
+    background-color: transparent ;
+    border: 2px solid #a3dcbe;
 }
 
 /* Techniques section */ 
-
+.breathing-technique-info {
+    width: 80%;
+    margin: 0 auto;
+}
 .breathing-technique-h1 {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     font-size: 2em;
+}
+
+.breathing-technique-h2 {
+    font-size: 1.5em;
 }
 
 .breathing-icon {
@@ -164,13 +172,14 @@ footer {
 
 /*Styling the Modal*/
 .modal-header {
-    border-bottom: 1px solid #3C403D;
-    padding: 0;
+    padding: 1em;
+    margin-right: 1em;
+    border: none;
 }
 .modal-footer {
     border-top: 1px solid #3C403D;
 }
-.modal-submit-btn {
+.modal-btn {
     background-color: #3C403D;
     color: #F3F3F3;
     transition-duration: 0.4s;
@@ -181,10 +190,6 @@ footer {
 
 .breathe-modal {
     width: fit-content;
-}
-
-.modal-body-1, .modal-body-2 {
-    margin: 0 auto;
 }
 
 .site-logo-modal{
@@ -198,7 +203,7 @@ footer {
     border-top: #3C403D ;
 }
 .modal-body-1, .modal-body-2 {
-    width: 80%;
+    width: 66%;
 }
 
 .slider-range {
@@ -236,6 +241,7 @@ footer {
 }
 
 /*breathe.html*/
+
 .breathe-timer {
     margin: 50px auto;
     display: flex;
@@ -247,6 +253,7 @@ footer {
 .breathe-circle {
     height: 25em;
     width: 25em;
+    margin-top: 10vh;
     background-color: #DADED4 ;
     border: 4px solid #202020;
     border-radius: 50%;
