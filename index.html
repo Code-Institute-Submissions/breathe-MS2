@@ -31,9 +31,7 @@
                 <div class="col-12  jumbotron-content">
                     <p class="jumbotron-text text-center">Which breathing technique do you need?</p>
                     <hr class="green-hr">
-                    <a href="breathe.html"><button type="button" class="col-12 jumbotron-btn justify-content-center">
-                            <h1><strong>Let's Breathe</strong></h1>
-                        </button></a>
+
                 </div>
             </div>
         </div>
@@ -48,8 +46,8 @@
                 </div>
                     
 
-                    <div class="col-12  col-sm-6 order-2 text-centerbreathe-timer">
-                        <div class="breathe-circle ">
+                    <div class="col-12  col-sm-6 order-2 text-center breathe-timer" id="breathe-timer">
+                        <div class="breathe-circle" id="breathe-circle">
                             <div class="row">
                                 <span class="text-center inhale-exhale" id="inhale-exhale-text"><strong>Press play to
                                         begin</strong></span><br>
@@ -62,6 +60,8 @@
                                 <button type="button" class="circle-btn settings-btn justify-content-center"
                                     id="settings-btn" data-toggle="modal" data-target="#letsBreathe"><i
                                         class="fas fa-cog"></i></button>
+                                <button type="button" class="circle-btn stop-btn" id="fullscreen-btn"><i class="fas fa-expand-arrows-alt"></i>
+                                </button>
                             </div>
                         </div>
                     

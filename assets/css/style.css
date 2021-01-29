@@ -242,6 +242,11 @@ footer {
 
 /*breathe circle*/
 
+#breathe-timer {
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
 .breathe-timer {
     margin: 50px auto;
     display: flex;
