@@ -14,12 +14,26 @@ I wanted this project to be completely different from my MS1 and something that 
         * [Colour Scheme](#Colour-Scheme)
         * [Logo](#Logo)
         * [Wireframes](#Wireframes)
-    * [Features](#Features)
-        * [index.html Page](#index.html-Page)
-        * [breathe.html Page](#breathe.html-Page)
-        * [Modal](#Modal)
+* [Features](#Features)
+    - [index.html Page](#index.html-Page)
+    - [breathe.html Page](#breathe.html-Page)
+    - [Modal](#Modal)
+    - [Features Left to Implement](features-left-to-implement)
+* [Technologies Used](#Technologies-Used)
+* [Testing](#testing)
+    - [Responsivity across devices](#responsivity-across-devices)
+    
 
- 
+ * [Issues and Solutions](#issues-and-solutions)   
+* [Deployment](#deployment)
+    * [Initial Creation](#initial-creation)
+    * [Deployment via GitHub](#deployment-via-github)
+* [Credits](#credits)
+    * [Content](#content)
+    * [Media](#media)
+    * [Acknowledgements](#acknowledgements)
+
+
 ## User Experience
  This website will target a wide range of people that are looking for different things from this website; some will want it for stres reduction, others to enhance their concentration and performance,
   while some may just want to take a few minutes to relax. The main focus of this site will be to get them started with their breathing exercise of choice so there won't be a lot of content to take 
@@ -76,8 +90,8 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Features
 ### index.html Page
-- Transparent header containing site logo on top Left
-- Hero image taking up 100vh 
+- Transparent header containing site logo on top Left corner
+- Hero image taking up 100vh and 100% of the width
 - Transparent jumbotron in the centre of the hero image with text and button leading to breathe.html page 
 - Under the hero image, heading and three text areas detailing the different breathing practises 
 - An image in the breathing techniques container
@@ -86,7 +100,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 ### breathe.html Page
 - Site logo which contains an anchor tag to the index.html page
 - Circle with breathing prompts
-- Play/ pause button in the circle to control the breathing exercise
+- Play/ stop button in the circle to control the breathing exercise
 - Settings button to bring you to modal box
 
  ### Modal
@@ -94,14 +108,6 @@ This section is also where you would share links to any wireframes, mockups, dia
 - Fourth radio button is custom choice which when selected gives drop down range sliders for inhale, hold, exhale, hold
 - Modal content to include submit button to start breathing exercise on breathe.html page
 - Modal to include "exit" button to return to breathe.html page
-
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 - Another feature idea
@@ -139,44 +145,57 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Responsivity across devices
+- I checked the site across [Google Chrome](https://www.google.com/intl/en_ie/chrome/), [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/), [Safari](https://www.apple.com/safari/) 
+and [Opera](https://www.opera.com/) and all pages were completely responsive  with the layout remaining intact, with the exception of [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) where the button in the 
+jumbotron appeared elongated.
+- Using [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), (to open I right-clicked anywhere on my website and clicked "Inspect" or clicked "F12" on the keyboard), I ran my site in mobile/tablet display 
+across the following devices: Galaxy Note 3, Galaxy S III, Moto G4, iPhone 4, Galaxy S5, Pixel 2, Pixel 2 XL, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X, iPad, iPad Pro. Everything 
+ran normally on these devices. I also sent my site to some friends and family to open on their phones and nobody had any issues.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+## Issues and Solutions
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+### Initial Creation
+Breathe was first created by completing the following steps on GitHub:
+1. Open [Github](https://github.com/) page up in browser
+2. Log in using your username and password
+3. Click the "New" green button to the left-hand side repository section
+4. Click template dropdown menu and select the "Code Institute Full Template"
+5. Enter name of project "breathe-MS2"
+6. Click "Create repository"
+7. Click the green "Gitpod" button ONCE to redirect to the Gitpod workspace
+8. Open via [Gitpod Workspaces](https://gitpod.io/workspaces/) only from then on
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+Throughout development, three primary commands were used with the CLI [Git](https://git-scm.com/) and were as follows :
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+- "git add" followed by the file name you wish to stage or "git add ." stages all unstaged files
+- "git commit -m" followed by a detailed comprehensive comment pertaining to the changes made since the previous commit
+- "git push" makes all changes visible on the GitHub Repo
+
+### Deployment via GitHub
+1. Open [Github](https://github.com/) page up in browser
+2. Log in using your username and password
+3. Select "shielh/breathe-MS2" from repositories displayed on left-hand side of screen
+4. Click "settings", the last option displayed in the navigation menu
+5. Scroll down until you reach "GitHub Pages" section
+6. Select "Master Branch" in the dropdown under the Source heading
+7. Finally, click to confirm my selection
+8. A live version of Breathe is now live on Github [here](https://shielh.github.io/breathe-MS2/)
+
 
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The setInteral() and clearInterval() functions were created with the help of this [YouTube tutorial](https://www.youtube.com/watch?v=ubLC1JxMqfY).
+- The custom slider was created with the guidance of this [YouTube tutorial](https://www.youtube.com/watch?v=BrpiNUf2XCk).
 
 ### Media
-- The photos used in this site were obtained from ...
+- The photos used on this site were obtained from [Unsplash](https://unsplash.com/).
 
 ### Acknowledgements
-
-- I received inspiration for this project from X
+- 
