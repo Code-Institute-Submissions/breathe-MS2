@@ -40,6 +40,7 @@ a:hover {
     text-decoration: none;
     color: #a3dcbe;
 }
+/*Z-index is 1 to have breathe icon visible on hero-image */
 .nav-container {
     position: absolute;
     top: 0;
@@ -59,7 +60,7 @@ a:hover {
     overflow: hidden;
 }
 
-/*Hero Image */
+/*Style Hero-Image to fill entire 100vh */
 .hero-image {
     background: url("../images/hero-image/hero-image.jpg") no-repeat bottom left fixed;  
     height: 100vh;
@@ -75,7 +76,7 @@ a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
-
+/* Create dark overlay for hero-image*/
 .dark-overlay {
     background-image: linear-gradient(268deg, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.6) 90%);
     position: absolute;
@@ -170,7 +171,7 @@ footer {
     color: #a3dcbe ;
 }
 
-/*Styling the Modal*/
+/*Styling the Modal components*/
 .modal-header {
     padding: 1em;
     margin-right: 1em;
@@ -179,6 +180,7 @@ footer {
 .modal-footer {
     border-top: 1px solid #3C403D;
 }
+
 .modal-btn {
     background-color: #3C403D;
     color: #F3F3F3;
@@ -192,13 +194,6 @@ footer {
     width: fit-content;
 }
 
-.site-logo-modal{
-    color: #3C403D ;
-    font-size: 2em;
-    font-weight: 800;
-    padding: 0;
-    margin: 0;
-}
 .breathe-modal-body {
     border-top: #3C403D ;
 }
@@ -206,6 +201,7 @@ footer {
     width: 66%;
 }
 
+/* Custom styling on slider in modal */
 .slider-range {
     width: 100%;
     -webkit-appearance: none;
@@ -241,10 +237,10 @@ footer {
 }
 
 /*breathe circle*/
-
+/*Keeps circle as the same size even in fullscreen */
 #breathe-timer {
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     overflow:hidden;
 }
 .breathe-timer {
@@ -255,6 +251,7 @@ footer {
     width: 60%;
 }
 
+/*Style circle and organize circle content*/
 .breathe-circle {
     height: 25em;
     width: 25em;
@@ -263,7 +260,7 @@ footer {
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
 }
 
