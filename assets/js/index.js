@@ -1,10 +1,10 @@
-/*Set variables & create getBreathText() function */
+/*Set variables for elements from index.html page to use in later function*/
 const inhaleExhale = document.getElementById("inhale-exhale-text");
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("stop-btn");
 const settingsBtn = document.getElementById("settings-btn");
 
-let intervalID;
+let intervalID = 0;
 
 /* Create variables for  linkSliderToSpan() function*/
 let sliderInhale = document.getElementById("inhale");
@@ -19,126 +19,14 @@ let exhaleHoldSpan = document.getElementById("exhaleHoldValue");
 
 const submitBtn = document.getElementById("modal-submit-btn");
 
-$(document).ready(function () {
-    $("#range-labels").hide();
-});
+// Set variables for elements from index.html page to use in getSelectedBreathingType function
+let boxBreathing = document.getElementById("boxBreathing");
+let relaxBreathing = document.getElementById("relaxBreathing");
+let calmBreathing = document.getElementById("calmBreathing");
+let customBreathing = document.getElementById("customBreathing");
 
-/* Click events */
-$("#customBreathing").click(function () {
-    $("#range-labels").show();
-});
-
-$("#boxBreathing, #relaxBreathing, #calmBreathing").click(function () {
-    $("#range-labels").hide();
-});
-
-$("#close-btn").click(function () {
-    $("#range-labels").hide();
-});
-
-/*Modal closes when submit button clicked*/
-$("#modal-submit-btn").click(function () {
-    $("#letsBreathe").modal("hide");
-});
-
-/* Only display play or stop button*/
-$("#stop-btn").hide();
-
-/* Only display play or stop button*/
-$("#modal-submit-btn").click(function () {
-    $("#start-btn").hide();
-    $("#stop-btn").show();
-});
-
-/*Adding click functions to buttons*/
-$(startBtn).click(function () {
-    startBreathing();
-    $("#start-btn").hide();
-    $("#stop-btn").show();
-});
-
-$(stopBtn).click(function () {
-    clearInterval(intervalID);
-    $("#stop-btn").hide();
-    $("#start-btn").show();
-});
-settingsBtn.addEventListener("click", function () {
-    clearInterval(intervalID);
-});
-
-$("#stop-btn, #settings-btn").click(function () {
-    inhaleExhale.textContent = "Press play to begin";
-});
-
-submitBtn.addEventListener("click", function () {
-    // start breathing    
-    startBreathing();
-    $("#stop-btn").hide();
-    $("#start-btn").show();
-});
-
-function startBreathing() {
-    let breathingType = getSelectedBreathingType();
-    let seconds = 0;
-
-    if (intervalID) {
-        clearInterval(intervalID);
-    }
-
-    inhaleExhale.textContent = "";
-
-    setTimeout(function () {
-        inhaleExhale.textContent = "3";
-    }, 500);
-
-    setTimeout(function () {
-        inhaleExhale.textContent = "2";
-    }, 1500);
-
-    setTimeout(function () {
-        inhaleExhale.textContent = "1";
-    }, 2500);
-
-    setTimeout(function () {
-        intervalID = setInterval(function () {
-            console.log(seconds);
-
-            let text = getBreathText(seconds, breathingType);
-
-            inhaleExhale.textContent = text;
-
-            seconds += 1;
-        }, 1000);
-
-    }, 2500);
-}
-
-function getBreathText(elapsedSeconds, breathType) {
-    let breathDuration = breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold;
-    let breathSeconds = elapsedSeconds % breathDuration;
-    let text;
-
-    if (breathSeconds < breathType.inhale) {
-        text = "Inhale";
-    }
-    // 1st hold
-    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold)) {
-        text = "Hold";
-    }
-    // 'out'
-    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold + breathType.exhale)) {
-        text = "Exhale";
-    }
-    // 2nd hold
-    else {
-        text = "Hold";
-    }
-
-    return text;
-}
-
-function getSelectedBreathingType() {
-    let box = {
+// Set object variables for the three set breathing types
+let box = {
         inhale: 4,
         inhaleHold: 4,
         exhale: 4,
@@ -159,11 +47,149 @@ function getSelectedBreathingType() {
         exhaleHold: 0
     };
 
-    let boxBreathing = document.getElementById("boxBreathing");
-    let relaxBreathing = document.getElementById("relaxBreathing");
-    let calmBreathing = document.getElementById("calmBreathing");
-    let customBreathing = document.getElementById("customBreathing");
 
+/*Create initialiseBreathingApp function with all click events*/
+function initialiseBreathingApp(){
+$(document).ready(function () {
+    $("#range-labels").hide();
+});
+
+$("#customBreathing").click(function () {
+    $("#range-labels").show();
+});
+// Custom slider options collapse if other breathing is selected
+$("#boxBreathing, #relaxBreathing, #calmBreathing").click(function () {
+    $("#range-labels").hide();
+});
+
+$("#close-btn").click(function () {
+    $("#range-labels").hide();
+});
+
+//Modal closes when submit button clicked
+$("#modal-submit-btn").click(function () {
+    $("#letsBreathe").modal("hide");
+
+});
+
+// Only display play or stop button
+$("#stop-btn").hide();
+
+$("#modal-submit-btn").click(function () {
+    $("#start-btn").hide();
+    $("#stop-btn").show();
+});
+
+//Adding click functions to buttons
+$(startBtn).click(function () {
+    startBreathing();
+    $("#start-btn").hide();
+    $("#stop-btn").show();
+});
+
+$(stopBtn).click(function () {
+    clearInterval(intervalID);
+    $("#stop-btn").hide();
+    $("#start-btn").show();
+});
+
+$(stopBtn, settingsBtn).click(function () {
+    inhaleExhale.textContent = "Press play to begin";
+});
+
+// Add event listeners
+settingsBtn.addEventListener("click", function () {
+    clearInterval(intervalID);
+    $("#stop-btn").hide();
+    $("#start-btn").show();
+});
+
+submitBtn.addEventListener("click", function () {
+    // start breathing function    
+    startBreathing();
+    $("#stop-btn").show();
+    $("#start-btn").hide();
+});
+}
+
+initialiseBreathingApp();
+
+/**
+ * Displays text in breathe circle before breathing intervals begin
+ * and sets clearInterval.
+ * @param {TYPE} arg
+ * @return {!Array<TYPE>}
+ * @template TYPE
+ */
+function startBreathing() {
+    let breathingType = getSelectedBreathingType();
+    let seconds = 0;
+
+    if (intervalID) {
+        clearInterval(intervalID);
+    }
+// Create countdown of 3 seconds before breathing starts
+    inhaleExhale.textContent = "";
+
+    setTimeout(function () {
+        inhaleExhale.textContent = "Ready?";
+    }, 500);
+
+    setTimeout(function () {
+        inhaleExhale.textContent = "Let's go!";
+    }, 1500);
+
+
+// Delay setInterval by 1.5sec to allow for person to get ready.   
+    setTimeout(function () {
+        intervalID = setInterval(function () {
+            console.log(seconds);
+
+            let text = getBreathText(seconds, breathingType);
+            
+            inhaleExhale.textContent = text;
+
+            seconds += 1;
+        }, 1000);
+
+    }, 1500);
+}
+
+/**
+ * Create function to display correct breath prompts for
+ * respective breathing methods
+ * @param {Integer} elapsedSeconds
+ * @param {Object} breathType
+ * @return {!text<String>}
+ */
+function getBreathText(elapsedSeconds, breathType) {
+    let breathDuration = breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold;
+    let breathSeconds = elapsedSeconds % breathDuration;
+    let text;
+
+    if (breathSeconds < breathType.inhale) {
+        text = "Inhale";
+    }
+    // 1st hold
+    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold)) {
+        text = "Hold";
+    }
+    // 'out'
+    else if (breathSeconds < (breathType.inhale + breathType.inhaleHold + breathType.exhale)) {
+        text = "Exhale";
+    }
+    // 2nd hold
+    else {
+        text = "Hold";
+    }
+    return text;
+}
+
+/**
+ * Links checked radio button to object variable to use in startBreathing() function
+ * @return {!box<Object>}
+ */ 
+function getSelectedBreathingType() { 
     if (boxBreathing.checked) {
         return box;
     }
@@ -182,6 +208,10 @@ function getSelectedBreathingType() {
     }
 }
 
+/**
+ * Turns custom string value into integer value for use in getSelectedBreathingType()
+ * @return {!box<Object>}
+ */ 
 function getCustomBreathingType() {
     return {
         inhale: parseInt(document.getElementById("inhale").value),
@@ -192,28 +222,26 @@ function getCustomBreathingType() {
 }
 
 
-/* Create function to show value in span */
+/**
+ * Shows the value of slider in the span element above the selected slider
+ */
 function linkSliderValueToSpanText(slider, span) {
     span.innerHTML = slider.value;
     slider.oninput = function () {
         span.innerHTML = this.value;
     };
 }
-
 linkSliderValueToSpanText(sliderInhale, inhaleSpan);
 linkSliderValueToSpanText(sliderInhaleHold, inhaleHoldSpan);
 linkSliderValueToSpanText(sliderExhale, exhaleSpan);
 linkSliderValueToSpanText(sliderExhaleHold, exhaleHoldSpan);
 
-
-/* Fullscreen API for breathe circle */
+/* Fullscreen function for breathe circle */
 function getFullscreenElement(){
-    return document.fullscreenElement
-    || document.webkitFullscreenElement
-    || document.mozFullscreenElement
-    || document.msFullscreenElement;
+    return document.fullscreenElement;
 }
 
+//Toggle full screen using a click event listener to the fullscreen icon on the breathe circle
 function toggleFullscreenMode() {
     if (getFullscreenElement()) {
         document.exitFullscreen();
