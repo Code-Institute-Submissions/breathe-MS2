@@ -76,7 +76,14 @@ function initialiseBreathingApp(){
         $("#letsBreathe").modal("hide");
         $("#start-btn").hide();
         $("#stop-btn").show();
-
+        // Disable stopBtn and settingsBtn for 2.5sec 
+            //i.e when setInterval begins
+         $(stopBtn).attr("disabled", "disabled");
+        $(settingsBtn).attr("disabled", "disabled");
+        setTimeout(function(){
+            $(stopBtn).attr("disabled", false);
+            $(settingsBtn).attr("disabled", false);
+        }, 2500);
     });
 
     //Adding click functions to buttons
@@ -84,6 +91,14 @@ function initialiseBreathingApp(){
         startBreathing();
         $("#start-btn").hide();
         $("#stop-btn").show();
+        // Disable stopBtn and settingsBtn for 2.5sec 
+            //i.e when setInterval begins
+        $(stopBtn).attr("disabled", "disabled");
+        $(settingsBtn).attr("disabled", "disabled");
+        setTimeout(function(){
+            $(stopBtn).attr("disabled", false);
+            $(settingsBtn).attr("disabled", false);
+        }, 2500);
     });
 
     $(stopBtn).click(function () {
@@ -93,8 +108,6 @@ function initialiseBreathingApp(){
         inhaleExhale.textContent = "Press play to begin";
         countdown.textContent = " ";
     });
-
-   
 
     settingsBtn.addEventListener("click", function () {
         clearInterval(intervalID);
@@ -262,4 +275,6 @@ document.getElementById("fullscreen-btn").addEventListener("click", () => {
     toggleFullscreenMode();
 });
 
+
 }
+

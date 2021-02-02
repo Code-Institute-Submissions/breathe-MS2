@@ -63,15 +63,16 @@
 
                         <div class="row">
                             
-                                <button type="button" class="circle-btn start-btn" id="start-btn"><i
+                                <button type="button" class="circle-btn start-btn" id="start-btn" title="Click to play"><i
                                         class="far fa-play-circle "></i></button>
-                                <button type="button" class="circle-btn stop-btn" id="stop-btn"><i
+                                <button type="button" class="circle-btn stop-btn" id="stop-btn" title="Click to stop"><i
                                         class="far fa-stop-circle"></i></button>
                             <button type="button" class="circle-btn settings-btn justify-content-center"
-                                    id="settings-btn" data-toggle="modal" data-target="#letsBreathe"><i
+                                    id="settings-btn" title="Click to change technique.(Only works when not in fullscreen)" data-toggle="modal" data-target="#letsBreathe"><i
                                         class="fas fa-cog"></i></button>
-                                <button type="button" class="circle-btn stop-btn" id="fullscreen-btn"><i class="fas fa-expand"></i>
+                                <button type="button" class="circle-btn stop-btn" id="fullscreen-btn" title="Click for fullscreen"><i class="fas fa-expand"></i>
                                 </button>
+                                
                             </div>
                             
                         </div>
@@ -154,7 +155,7 @@
             </div>
         </div>
         <!--https://stackoverflow.com/questions/27870042/bootstrap-input-dialog-with-radio-buttons-->
-        <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" 
             aria-hidden="true">
             <div class="modal-dialog ">
                 <div class="modal-content breathe-modal justify-content-center">
@@ -178,7 +179,7 @@
                         <label class="radio-inline">
                             <input type="radio" name="breathingOptions" id="calmBreathing" value="calm"> Calm Breathing
                         </label>
-                        <label class="radio-inline">
+                        <div class="radio-inline">
                             <input type="radio" name="breathingOptions" id="customBreathing" value="custom"> Custom
                             <div id="range-labels" class="range-labels">
                                 <label for="inhale"> Inhale: <span id="inhaleValue"></span></label><br>
@@ -197,7 +198,7 @@
                                 <input type="range" name="exhaleHoldTime" class="slider-range" id="exhale-hold" min="0"
                                     max="20" value="4">
                             </div>
-                        </label>
+                        </div>
                     </div>
 
                     <div class="modal-footer justify-content-center">
