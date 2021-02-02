@@ -16,7 +16,6 @@ I wanted this project to be completely different from my MS1 and something that 
         * [Wireframes](#Wireframes)
 * [Features](#Features)
     - [index.html Page](#index.html-Page)
-    - [breathe.html Page](#breathe.html-Page)
     - [Modal](#Modal)
     - [Features Left to Implement](features-left-to-implement)
 * [Technologies Used](#Technologies-Used)
@@ -55,12 +54,11 @@ After they choose their breathing method and the time they wish to practise for,
 - As a user, I want to be able to easily navigate throughout the site.
 - As a user, I want to be informed about the breathing techniques before I pick the one I wish to practise.
 - As a user, I want to decide when my practise starts.
-- As a user, I want to be able to pause my practise.
-- As a user, I want to decide how long I practise my breathing for.
-- As a user, I want calming colours and images to help me relax.
-- As a user, I want to be able to change my selection of breathing technique and/or timing even after my practise has begun.
+- As a user, I want to be able to stop my practise.
+- As a user, I want calming colours to help me relax.
+- As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
 - As a user, I want to see social media links so I can learn more about the company on a separate page.
-- As a user, I want to control whether music is played or not during the breathing practise.
+- As a user, I want to control whether the practise is played in fullscreen mode or normal.
 
 ## Design
 ### Font 
@@ -68,23 +66,29 @@ Using the <a href="https://fontpair.co/">Font Pair</a> website, I chose two comp
 for the headings, and <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> for the rest of the text.
 
 ### Colour Scheme
-The colours used in the website will be #F3F3F3 (white), #202020 (black), #3C403D (brown grey), #a3dcbe (green cyan) and #DADED4 (Tanly)
+The colours used in the website will be:
+- ![#F3F3F3](https://via.placeholder.com/30x30.png/F3F3F3)  `#F3F3F3` 
+- ![#202020](https://via.placeholder.com/30x30.png/202020) `#202020`
+- ![#3C403D](https://via.placeholder.com/30x30.png/3C403D) `#3C403D`
+- ![#a3dcbe](https://via.placeholder.com/30x30.png/a3dcbe) `#a3dcbe`
+- ![#DADED4](https://via.placeholder.com/30x30.png/DADED4) `#DADED4`
+
 
 ### Logo
-Using the colour #a3dcbe and the font Roboto with font-weight 800, I created the font logo "Breathe". <br> 
+Using the colour ![#a3dcbe](https://via.placeholder.com/30x30.png/a3dcbe) `#a3dcbe` and the font <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> with font-weight 800, I created the font logo "Breathe". <br> 
 ![Breathe Logo](assets/images/logo/site-logo.PNG)
 
 ### Wireframes 
 Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for my website. 
 
 
-![index.html wireframe for Desktop](assets/images/wireframes/index.html-Desktop.png)
-![index.html wireframe for mobile](assets/images/wireframes/index.html-Mobile.png)
+![index.html wireframe for Desktop](assets/images/wireframes/index.html-DesktopNew.png)
+![index.html wireframe for mobile](assets/images/wireframes/index.html-MobileNew.png)
 
-![Modal](assets/images/wireframes/Modal.png)
+![Modal](assets/images/wireframes/ModalNew.png)
 
-![breathe.html wireframe for Desktop](assets/images/wireframes/breathe.html-Desktop.png)
-![breathe.html wireframe for mobile](assets/images/wireframes/breathe.html-Mobile.png)
+ Alternatively you can view the wireframes here : [Wireframes folder](assets/images/wireframes). <br>
+ 
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
@@ -92,22 +96,20 @@ This section is also where you would share links to any wireframes, mockups, dia
 ### index.html Page
 - Transparent header containing site logo on top Left corner
 - Hero image taking up 100vh and 100% of the width
-- Transparent jumbotron in the centre of the hero image with text and button leading to breathe.html page 
-- Under the hero image, heading and three text areas detailing the different breathing practises 
-- An image in the breathing techniques container
-- Footer to include social media links to open in separate tab
-
-### breathe.html Page
-- Site logo which contains an anchor tag to the index.html page
-- Circle with breathing prompts
-- Play/ stop button in the circle to control the breathing exercise
+- Dark overlay on hero image to make text easier to read
+- Transparent jumbotron in the centre of the hero image with text
+- Under the hero image, there is a heading and three text areas detailing the different breathing practises 
+- Circle with breathing prompts and seconds remaining for each prompt
+- Play and stop buttons in the circle to control the breathing exercise
 - Settings button to bring you to modal box
+- Fullscreen icon to allow you to toggle between fullscreen mode
+- Footer to include social media links to open in separate tab
 
  ### Modal
 - Modal content to include radio buttons to make choice of technique
 - Fourth radio button is custom choice which when selected gives drop down range sliders for inhale, hold, exhale, hold
-- Modal content to include submit button to start breathing exercise on breathe.html page
-- Modal to include "exit" button to return to breathe.html page
+- Modal content to include submit button to start breathing exercise on index.html page
+- Modal to include "exit" button to return to index.html page
 
 ### Features Left to Implement
 - Another feature idea
@@ -153,6 +155,20 @@ jumbotron appeared elongated.
 across the following devices: Galaxy Note 3, Galaxy S III, Moto G4, iPhone 4, Galaxy S5, Pixel 2, Pixel 2 XL, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X, iPad, iPad Pro. Everything 
 ran normally on these devices. I also sent my site to some friends and family to open on their phones and nobody had any issues.
 
+### HTML CSS and JavaScript Testing
+1. W3C HTML Validator
+- I opened [W3C HTML Validator](https://validator.w3.org/) and selected the "Validate by Direct Input" option and pasted the index.html content in, clicked "Check" and was greeted with the following 
+message "Document checking completed. No errors or warnings to show."
+
+2. Similarly, I ran the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
+- I selected the "by Direct Input" option and pasted my style.css and responsive.css code in
+- I received the message "Congratulations! No Error Found" on both entries.
+
+3. Finally, I ran the code through the [JSHint Validator](https://jshint.com/) 
+- I deleted the code on the left hand side of the screen and pasted my index.js code in, then clicked configure
+- I received three of the same warnings "Unnecessary semicolon" which disappeared when I deleted the semicolons and ran the code through again.
+
+
 
 ## Issues and Solutions
 
@@ -193,9 +209,13 @@ Throughout development, three primary commands were used with the CLI [Git](http
 ### Content
 - The setInteral() and clearInterval() functions were created with the help of this [YouTube tutorial](https://www.youtube.com/watch?v=ubLC1JxMqfY).
 - The custom slider was created with the guidance of this [YouTube tutorial](https://www.youtube.com/watch?v=BrpiNUf2XCk).
+- The toggle fullscreen function was created with the help of this [YouTube tutorial](https://www.youtube.com/watch?v=3FjYcMKZ3SU).
+- The CSS code to prevent the circle shape from distorting and enlarging in fullscreen was taken from [StackOverflow](https://stackoverflow.com/questions/3276226/how-to-make-a-full-screen-div-and-prevent-size-to-be-changed-by-content)
+
 
 ### Media
 - The photos used on this site were obtained from [Unsplash](https://unsplash.com/).
 
 ### Acknowledgements
-- 
+I would like to thank my brother Gregory for his patience in answering my JavaScript related questions. 
+I would also like to thank my mentor Rohit Sharma for his guidance throughout this project
