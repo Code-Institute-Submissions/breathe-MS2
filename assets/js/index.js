@@ -1,14 +1,16 @@
-window.addEventListener('load', initialiseBreathingApp());
+$( document ).ready(function() {
+    initialiseBreathingApp(); 
+});
 
 /*Create initialiseBreathingApp function with all functions*/
-function initialiseBreathingApp() {
+function initialiseBreathingApp(){
     /*Set variables for elements from index.html page to use in later function*/
     const inhaleExhale = document.getElementById("inhale-exhale-text");
+    const countdown = document.getElementById("breathingCountdown");
     const startBtn = document.getElementById("start-btn");
     const stopBtn = document.getElementById("stop-btn");
     const settingsBtn = document.getElementById("settings-btn");
-    const countdown = document.getElementById("breathingCountdown");
-
+    
     let intervalID = 0;
 
     /* Create variables for  linkSliderToSpan() function*/
@@ -51,10 +53,11 @@ function initialiseBreathingApp() {
         exhale: 11,
         exhaleHold: 0
     };
+
     $("#range-labels").hide();
     $("#stop-btn").hide();
 
-function registerEventHandlers() {
+    function registerEventHandlers() {
     $("#customBreathing").click(function () {
         $("#range-labels").show();
     });
@@ -97,7 +100,6 @@ function registerEventHandlers() {
 
     });
 
-    registerEventHandlers();
     settingsBtn.addEventListener("click", function () {
         clearInterval(intervalID);
         $("#stop-btn").hide();
@@ -111,6 +113,8 @@ function registerEventHandlers() {
         $("#start-btn").hide();
     });
 }
+
+registerEventHandlers();
 /**
  * Displays text in breathe circle before breathing intervals begin
  * and sets clearInterval.
@@ -136,11 +140,6 @@ function startBreathing() {
         inhaleExhale.textContent = "Let's go!";
     }, 1500);
 
-    setTimeout(function () {
-        countdownTimer();
-    }, 1500);
-
-
     // Delay setInterval by 1.5sec to allow for person to get ready.   
     setTimeout(function () {
         intervalID = setInterval(function () {
@@ -159,8 +158,8 @@ function startBreathing() {
 }
 
 /**
- * Create function to display correct breath prompts for
- * respective breathing methods
+ * Create function to display correct breath prompts and countdown 
+ * in seconds for respective breathing methods
  * @param {Integer} elapsedSeconds
  * @param {Object} breathType
  * @return {!text<String>}
@@ -265,6 +264,4 @@ document.getElementById("fullscreen-btn").addEventListener("click", () => {
     toggleFullscreenMode();
 });
 
-
 }
-
