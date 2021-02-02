@@ -27,6 +27,7 @@ and (max-width: 1024px){
 }
 }
 
+/* Add different jpg file with cropped hero-image */
 @media only screen and (max-width : 992px) {
 .hero-image {
     background: url("../images/hero-image/hero-image-1200pxMaxWidth.jpg") no-repeat bottom center fixed ;  
@@ -55,9 +56,10 @@ and (max-width: 1024px){
         border: 1px solid #a3dcbe;
         padding: 1em;
     }
-    .inhale-exhale {
+    .inhale-exhale,  .countdown-seconds {
         font-size: 1em;
     }
+
 }
 
 @media only screen and (min-width : 1024px){

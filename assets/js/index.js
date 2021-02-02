@@ -10,6 +10,7 @@ function initialiseBreathingApp(){
     const startBtn = document.getElementById("start-btn");
     const stopBtn = document.getElementById("stop-btn");
     const settingsBtn = document.getElementById("settings-btn");
+    const submitBtn = document.getElementById("modal-submit-btn");
     
     let intervalID = 0;
 
@@ -24,7 +25,7 @@ function initialiseBreathingApp(){
     let exhaleSpan = document.getElementById("exhaleValue");
     let exhaleHoldSpan = document.getElementById("exhaleHoldValue");
 
-    const submitBtn = document.getElementById("modal-submit-btn");
+
 
     // Set variables for elements from index.html page to use in getSelectedBreathingType function
     let boxBreathing = document.getElementById("boxBreathing");
@@ -71,14 +72,11 @@ function initialiseBreathingApp(){
     });
 
     //Modal closes when submit button clicked
-    $("#modal-submit-btn").click(function () {
+    $(submitBtn).click(function () {
         $("#letsBreathe").modal("hide");
-
-    });
-
-    $("#modal-submit-btn").click(function () {
         $("#start-btn").hide();
         $("#stop-btn").show();
+
     });
 
     //Adding click functions to buttons
@@ -92,25 +90,25 @@ function initialiseBreathingApp(){
         clearInterval(intervalID);
         $("#stop-btn").hide();
         $("#start-btn").show();
-    });
-
-    $(stopBtn, settingsBtn).click(function () {
         inhaleExhale.textContent = "Press play to begin";
-        document.getElementById("breathingCountdown").textContent = " ";
-
+        countdown.textContent = " ";
     });
+
+   
 
     settingsBtn.addEventListener("click", function () {
         clearInterval(intervalID);
-        $("#stop-btn").hide();
-        $("#start-btn").show();
+        $(stopBtn).hide();
+        $(startBtn).show();
+        inhaleExhale.textContent = "Press play to begin";
+        countdown.textContent = " ";
     });
 
     submitBtn.addEventListener("click", function () {
         // start breathing function    
         startBreathing();
-        $("#stop-btn").show();
-        $("#start-btn").hide();
+        $(stopBtn).show();
+        $(startBtn).hide();
     });
 }
 
