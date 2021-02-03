@@ -152,7 +152,7 @@ a:hover {
 }
 
 .breathe-timer {
-    margin: 50px auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
