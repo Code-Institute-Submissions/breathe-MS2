@@ -1,6 +1,7 @@
 /*Create initialiseBreathingApp function with all functions inside*/
 function initialiseBreathingApp() {
     /*Set variables for elements from index.html page to use in later function*/
+    const breatheCircle = document.getElementById("breathe-circle");
     const inhaleExhale = document.getElementById("inhale-exhale-text");
     const countdown = document.getElementById("breathingCountdown");
     const startBtn = document.getElementById("start-btn");
@@ -153,6 +154,12 @@ function initialiseBreathingApp() {
 
                 inhaleExhale.textContent = options.text;
                 countdown.textContent = options.countdown;
+                breatheCircle.classList.add(options.circleClassName);
+                // TODO: make sure that class is not already applied before adding it
+                if (breatheCircle.classList.length > 1 ) {
+                    breatheCircle.classList.remove(breatheCircle.classList.item(1));
+                    breatheCircle.classList.add(options.circleClassName);
+                }
 
                 seconds += 1;
             }, 1000);
@@ -173,28 +180,35 @@ function initialiseBreathingApp() {
         if (breathSeconds < breathType.inhale) {
             return {
                 text: "Inhale",
-                countdown: breathType.inhale - breathSeconds
+                countdown: breathType.inhale - breathSeconds,
+                circleClassName: "inhale-colour",
+            
             };
         }
         // 1st hold
         else if (breathSeconds < (breathType.inhale + breathType.inhaleHold)) {
             return {
                 text: "Hold",
-                countdown: (breathType.inhale + breathType.inhaleHold) - breathSeconds
+                countdown: (breathType.inhale + breathType.inhaleHold) - breathSeconds,
+                circleClassName: "hold-colour",
+                
             };
         }
         // 'out'
         else if (breathSeconds < (breathType.inhale + breathType.inhaleHold + breathType.exhale)) {
             return {
                 text: "Exhale",
-                countdown: (breathType.inhale + breathType.inhaleHold + breathType.exhale) - breathSeconds
+                countdown: (breathType.inhale + breathType.inhaleHold + breathType.exhale) - breathSeconds,
+                circleClassName: "exhale-colour",
+                
             };
         }
         // 2nd hold
         else {
             return {
                 text: "Hold",
-                countdown: (breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold) - breathSeconds
+                countdown: (breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold) - breathSeconds,
+                circleClassName: "hold-colour2",
             };
         }
     }
