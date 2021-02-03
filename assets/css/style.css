@@ -188,7 +188,8 @@ a:hover {
 .circle-btn {
     border:none;
     background-color: #a3dcbe;
-    font-size: 1.5em;
+    font-size: 2em;
+    margin: 0 8px;
 }
 
 /*Styling the Modal components*/
@@ -221,7 +222,9 @@ a:hover {
     width: 66%;
 }
 
-/* Custom styling on slider in modal */
+/* Custom styling on slider in modal 
+ Credit to Youtube tutorial referenced 
+ in README*/
 .slider-range {
     width: 100%;
     -webkit-appearance: none;
@@ -256,7 +259,7 @@ a:hover {
     color: #3C403D ;
 }
 
-/* Footer */
+/* Styling the Footer */
 .footer-container {
     display: flex;
     justify-content: center;

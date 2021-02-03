@@ -37,9 +37,6 @@ and (max-width: 1024px){
     border-radius: 50%;
     
 }
-.start-btn, .pause-btn, .settings-btn, .fullscreen-btn {
-    font-size: 2em;
-}
 }
    
 @media only screen and (max-width : 768px){

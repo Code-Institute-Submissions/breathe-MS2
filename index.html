@@ -46,39 +46,36 @@
                 <div class="col-12 breathing-technique-h1 text-center">
                     <h1>Breathing Techniques & Practise</h1>
                 </div>
-                    
-                    <div class="col-12  col-md-6 order-2 text-center breathe-timer" id="breathe-timer">
-                        <div class="breathe-circle" id="breathe-circle">
-                            <div class="countdown">
-                                <p class="countdown-seconds"> 
-                                    <span id="breathingCountdown">&nbsp;</span>
-                                </p>
-                            </div>
 
-                            <div class="row">
-                                <span class="text-center inhale-exhale" id="inhale-exhale-text"><strong>Press play to
-                                        begin</strong></span><br>
-
-                            </div>
+                <div class="col-12  col-md-6 order-md-2 text-center breathe-timer" id="breathe-timer">
+                    <div class="breathe-circle" id="breathe-circle">
+                        <div class="countdown">
+                            <p class="countdown-seconds">
+                                <span id="breathingCountdown">&nbsp;</span>
+                            </p>
+                        </div>
 
                         <div class="row">
-                            
-                                <button type="button" class="circle-btn start-btn" id="start-btn" title="Click to play"><i
-                                        class="far fa-play-circle "></i></button>
-                                <button type="button" class="circle-btn stop-btn" id="stop-btn" title="Click to stop"><i
-                                        class="far fa-stop-circle"></i></button>
-                            <button type="button" class="circle-btn settings-btn justify-content-center"
-                                    id="settings-btn" title="Click to change technique.(Only works when not in fullscreen)" data-toggle="modal" data-target="#letsBreathe"><i
-                                        class="fas fa-cog"></i></button>
-                                <button type="button" class="circle-btn fullscreen-btn" id="fullscreen-btn" title="Click for fullscreen"><i class="fas fa-expand"></i>
-                                </button>
-                                
-                            </div>
-                            
-                        </div>
-                    
-                </div>
+                            <span class="text-center inhale-exhale" id="inhale-exhale-text"><strong>Press play to
+                                    begin</strong></span><br>
 
+                        </div>
+                        <div class="row">
+
+
+                            <button type="button" class="circle-btn settings-btn justify-content-center"
+                                id="settings-btn" title="Click to change technique.(Only works when not in fullscreen)"
+                                data-toggle="modal" data-target="#letsBreathe"><i class="fas fa-cog"></i></button>
+                            <button type="button" class="circle-btn start-btn" id="start-btn" title="Click to play"><i
+                                    class="far fa-play-circle "></i></button>
+                            <button type="button" class="circle-btn stop-btn" id="stop-btn" title="Click to stop"><i
+                                    class="far fa-stop-circle"></i></button>
+                            <button type="button" class="circle-btn fullscreen-btn" id="fullscreen-btn"
+                                title="Click for fullscreen"><i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-10 breathing-technique-container col-md-5  text-center">
                     <i id="breathing-icon1" class="fas fa-lungs breathing-icon"></i>
@@ -94,7 +91,7 @@
 
                     </p>
 
-                     <i id="breathing-icon2" class="fas fa-bed breathing-icon"></i>
+                    <i id="breathing-icon2" class="fas fa-bed breathing-icon"></i>
                     <h2 class="text-center breathing-technique-h2"> Relaxing
                         Breathing </h2>
 
@@ -108,7 +105,7 @@
 
                     </p>
 
-                     <i id="breathing-icon3" class="fas fa-praying-hands breathing-icon"></i>
+                    <i id="breathing-icon3" class="fas fa-praying-hands breathing-icon"></i>
                     <h2 class="text-center breathing-technique-h2">
                         Calming Breathing </h2>
 
@@ -120,13 +117,10 @@
                         It is recommended to practise this for <strong>5-10 minutes</strong> at a time.
 
                     </p>
-
-
-                </div>
-
                 </div>
             </div>
-        
+        </div>
+
     </section>
     <!--Footer containing social icons-->
     <footer class="container-fluid footer-container">
@@ -146,17 +140,18 @@
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://github.com/shielh" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/shielh" target="_blank" rel="noopener"><i class="fab fa-github"
+                                aria-hidden="true"></i>
                             <span class="sr-only">Github</span>
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
+        <!--Bootstrap Modal-->
         <!--https://stackoverflow.com/questions/27870042/bootstrap-input-dialog-with-radio-buttons-->
-        <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" 
-            aria-hidden="true">
+        <div class="modal fade" id="letsBreathe" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog ">
                 <div class="modal-content breathe-modal justify-content-center">
                     <div class="modal-header">
@@ -210,13 +205,10 @@
             </div>
         </div>
     </footer>
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <script src="assets/js/index.js"></script>
-    <script src="assets/js/breathe.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
