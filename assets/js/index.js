@@ -80,7 +80,6 @@ function initialiseBreathingApp() {
             disableBtns();
             $("#start-btn").hide();
             $("#stop-btn").show();
-
         });
 
         //Modal closes when submit button clicked
@@ -95,6 +94,7 @@ function initialiseBreathingApp() {
             clearInterval(intervalID);
             $("#stop-btn").hide();
             $("#start-btn").show();
+            
             inhaleExhale.textContent = "Press play to begin";
             /**Puts a blank space in span to keep same 
              * distance between elements
@@ -106,6 +106,7 @@ function initialiseBreathingApp() {
             clearInterval(intervalID);
             $(stopBtn).hide();
             $(startBtn).show();
+            
             inhaleExhale.textContent = "Press play to begin";
             countdown.textContent = "\xa0";
         });
@@ -155,12 +156,12 @@ function initialiseBreathingApp() {
                 inhaleExhale.textContent = options.text;
                 countdown.textContent = options.countdown;
                 breatheCircle.classList.add(options.circleClassName);
-                // TODO: make sure that class is not already applied before adding it
+                /* Removes previous color class from current breathing prompt  
+                on breathe circle to prevent second hold colour from sticking*/
                 if (breatheCircle.classList.length > 1 ) {
                     breatheCircle.classList.remove(breatheCircle.classList.item(1));
                     breatheCircle.classList.add(options.circleClassName);
                 }
-
                 seconds += 1;
             }, 1000);
         }, 1500);
