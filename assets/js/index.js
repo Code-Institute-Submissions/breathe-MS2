@@ -1,7 +1,3 @@
-$( document ).ready(function() {
-    initialiseBreathingApp(); 
-});
-
 /*Create initialiseBreathingApp function with all functions*/
 function initialiseBreathingApp(){
     /*Set variables for elements from index.html page to use in later function*/
@@ -24,8 +20,6 @@ function initialiseBreathingApp(){
     let inhaleHoldSpan = document.getElementById("inhaleHoldValue");
     let exhaleSpan = document.getElementById("exhaleValue");
     let exhaleHoldSpan = document.getElementById("exhaleHoldValue");
-
-
 
     // Set variables for elements from index.html page to use in getSelectedBreathingType function
     let boxBreathing = document.getElementById("boxBreathing");
@@ -71,34 +65,29 @@ function initialiseBreathingApp(){
         $("#range-labels").hide();
     });
 
+function disableBtns (){
+     $(stopBtn).attr("disabled", "disabled");
+        $(settingsBtn).attr("disabled", "disabled");
+        setTimeout(function(){
+            $(stopBtn).attr("disabled", false);
+            $(settingsBtn).attr("disabled", false);
+        }, 2500);
+}
+//Adding click functions to buttons
+    $(startBtn).click(function () {
+        startBreathing();
+        disableBtns();
+        $("#start-btn").hide();
+        $("#stop-btn").show();
+
+    });
+
     //Modal closes when submit button clicked
     $(submitBtn).click(function () {
         $("#letsBreathe").modal("hide");
         $("#start-btn").hide();
         $("#stop-btn").show();
-        // Disable stopBtn and settingsBtn for 2.5sec 
-            //i.e when setInterval begins
-         $(stopBtn).attr("disabled", "disabled");
-        $(settingsBtn).attr("disabled", "disabled");
-        setTimeout(function(){
-            $(stopBtn).attr("disabled", false);
-            $(settingsBtn).attr("disabled", false);
-        }, 2500);
-    });
-
-    //Adding click functions to buttons
-    $(startBtn).click(function () {
-        startBreathing();
-        $("#start-btn").hide();
-        $("#stop-btn").show();
-        // Disable stopBtn and settingsBtn for 2.5sec 
-            //i.e when setInterval begins
-        $(stopBtn).attr("disabled", "disabled");
-        $(settingsBtn).attr("disabled", "disabled");
-        setTimeout(function(){
-            $(stopBtn).attr("disabled", false);
-            $(settingsBtn).attr("disabled", false);
-        }, 2500);
+        disableBtns();
     });
 
     $(stopBtn).click(function () {
@@ -106,6 +95,9 @@ function initialiseBreathingApp(){
         $("#stop-btn").hide();
         $("#start-btn").show();
         inhaleExhale.textContent = "Press play to begin";
+        /**Puts a blank space in span to keep same 
+         * distance between elements
+         */
         countdown.textContent = "\xa0";
     });
 
@@ -124,8 +116,9 @@ function initialiseBreathingApp(){
         $(startBtn).hide();
     });
 }
-
+//Call the function
 registerEventHandlers();
+
 /**
  * Displays text in breathe circle before breathing intervals begin
  * and sets clearInterval.
@@ -162,9 +155,7 @@ function startBreathing() {
             countdown.textContent = options.countdown;
 
             seconds += 1;
-
         }, 1000);
-
     }, 1500);
 }
 
@@ -245,7 +236,7 @@ function getCustomBreathingType() {
 }
 
 /**
- * Shows the value of slider in the span element above the selected slider
+ * Shows the selected value above the slider in the modal 
  */
 function linkSliderValueToSpanText(slider, span) {
     span.innerHTML = slider.value;
@@ -274,7 +265,9 @@ function toggleFullscreenMode() {
 document.getElementById("fullscreen-btn").addEventListener("click", () => {
     toggleFullscreenMode();
 });
-
-
 }
 
+// Call the function when page is loaded
+$( document ).ready(function() {
+    initialiseBreathingApp(); 
+});
