@@ -106,7 +106,7 @@ function initialiseBreathingApp(){
         $("#stop-btn").hide();
         $("#start-btn").show();
         inhaleExhale.textContent = "Press play to begin";
-        countdown.textContent = " ";
+        countdown.textContent = "\xa0";
     });
 
     settingsBtn.addEventListener("click", function () {
@@ -114,7 +114,7 @@ function initialiseBreathingApp(){
         $(stopBtn).hide();
         $(startBtn).show();
         inhaleExhale.textContent = "Press play to begin";
-        countdown.textContent = " ";
+        countdown.textContent = "\xa0";
     });
 
     submitBtn.addEventListener("click", function () {
