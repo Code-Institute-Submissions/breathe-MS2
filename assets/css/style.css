@@ -82,7 +82,6 @@ a:hover {
     position: absolute;
     height: 100vh;
     width: 100%;
-    inset: 0px;
     z-index: -1;
     display: flex;
 }
@@ -307,12 +306,14 @@ footer {
 .error-h1 {
     font-size: 3em;
 }
+.error-h2 {
+    font-size: 2em;
+}
 .error-container {
     padding: 3em;
-    background: #F3F3F3  ;
+    background: #F3F3F3;
 }
 
-.redirect {
+.error-text {
     font-size: 1.5em;
-    font-weight: 600;
 }
