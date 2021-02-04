@@ -1,14 +1,15 @@
 /*Create initialiseBreathingApp function with all functions inside*/
 function initialiseBreathingApp() {
     /*Set variables for elements from index.html page to use in later function*/
-    const breatheCircle = document.getElementById("breathe-circle");
-    const inhaleExhale = document.getElementById("inhale-exhale-text");
-    const countdown = document.getElementById("breathingCountdown");
     const startBtn = document.getElementById("start-btn");
     const stopBtn = document.getElementById("stop-btn");
     const settingsBtn = document.getElementById("settings-btn");
     const submitBtn = document.getElementById("modal-submit-btn");
 
+    const breatheCircle = document.getElementById("breathe-circle");
+    const inhaleExhale = document.getElementById("inhale-exhale-text");
+    const countdown = document.getElementById("breathingCountdown");
+    
     let intervalID = 0;
 
     /* Create variables for  linkSliderToSpan() function*/

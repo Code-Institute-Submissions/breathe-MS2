@@ -7,7 +7,7 @@ This project was created for my second Milestone Project with Code Institute in 
 of HTML, CSS, Bootstrap and JavaScript.
 
 I wanted this project to be completely different from my MS1. I also thought why not create something that lots of people would use on a daily basis.
-I know there are a few breathing / meditation apps out there right now but I don't think there are many with a simple one page interface with 
+I know there are already a few breathing / meditation apps but I don't think there are many with a simple single page interface with 
 minimal distractions from the task at hand: to breathe.
 
 ---
@@ -29,6 +29,8 @@ minimal distractions from the task at hand: to breathe.
 * [Testing](#testing)
     - [Responsivity across devices](#responsivity-across-devices)
     - [HTML CSS and JavaScript Testing](#html-css-and-javascript-testing)
+    - [User Stories](#user-stories)
+    - [Manual Testing](#manual-testing)
 
  * [Issues and Solutions](#issues-and-solutions)   
 * [Deployment](#deployment)
@@ -54,10 +56,11 @@ minimal distractions from the task at hand: to breathe.
 - As a user, I want to be informed about the breathing techniques before I pick the one I wish to practise.
 - As a user, I want to decide when my practise starts.
 - As a user, I want to be able to stop my practise.
+- As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions
 - As a user, I want calming colours to help me relax.
 - As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
 - As a user, I want to see social media links so I can learn more about the company on a separate page.
-- As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions
+
 
 ---
 ### The Strategy Plane
@@ -77,10 +80,12 @@ will be displayed on the screen.
 Using the <a href="https://fontpair.co/">Font Pair</a> website, I chose two complimentary fonts; <a href="https://fonts.google.com/specimen/Asap">Asap</a> 
 for the headings, and <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> for the rest of the text.
 
+--- 
 ### Images
 The sites only image is the hero image which takes up 100% of the width and 100vh. The image is a photo from the beach with rocks balancing on top of one another which should bring the users 
 a sense of calm and peace.
 
+---
 ### Colour Scheme
 The colours used in the website will be:
 - ![#F3F3F3](https://via.placeholder.com/30x30.png/F3F3F3)  `#F3F3F3` 
@@ -89,11 +94,12 @@ The colours used in the website will be:
 - ![#a3dcbe](https://via.placeholder.com/30x30.png/a3dcbe) `#a3dcbe`
 - ![#DADED4](https://via.placeholder.com/30x30.png/DADED4) `#DADED4`
 
-
+---
 ### Logo
 Using the colour ![#a3dcbe](https://via.placeholder.com/30x30.png/a3dcbe) `#a3dcbe` and the font <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> with font-weight 800, I created the font logo "Breathe". <br> 
 ![Breathe Logo](assets/images/logo/site-logo.PNG)
 
+---
 ### Wireframes 
 Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for my website. 
 
@@ -102,8 +108,13 @@ Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for 
 
 ![Modal](assets/images/wireframes/ModalNew.png)
 
- Alternatively you can view the wireframes here : [Wireframes folder](assets/images/wireframes). <br>
+ Alternatively you can view the wireframes [here](assets/images/wireframes). <br>
  
+#### Differences to Wireframes
+The original wireframes can be viewed [here](assets/images/oldWireframes). The new wireframes adapted a single page approach for this web app. 
+A custom 404 error page was added with an anchor link which the user can click and they will be redirected back to index.html page. 
+
+ ---
 ## Features
 ### index.html Page
 - Transparent header containing site logo on top Left corner
@@ -126,9 +137,10 @@ Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for 
 ### Future Features to Implement
 - Animations to increase the size of the circle on inhale, the increased size to remain for the first hold, the cirlce to decrease to its origanal size throught the exhale and to remain the smaller 
 size for the second hold.
-- Add an option to sign up to "Breathe" where you can enter how often you would like to practise and set up alerts to remind you at certain times or days 
+- Add an option to sign up to "Breathe" where you can enter how often you would like to practise and set up alerts to remind you at the chosen time of day
 - Add soft, soothing music to play while the breathing practise is in session that can be switched on and off by the user
 
+---
 ## Technologies Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) 
@@ -158,6 +170,7 @@ size for the second hold.
 - [Tiny JPG](https://tinyjpg.com/) 
     - This was used this to compress my images
 
+---
 ## Testing
 
 ### Responsivity across devices
@@ -171,6 +184,7 @@ so i changed the vh to 100 and the width to 100% for the overlay styling and thi
 
 ![Dark Overlay Issue on Mobile device](assets/images/testingImages/darkOverlayIssue.PNG)
 
+---
 ### HTML CSS and JavaScript Testing
 1. W3C HTML Validator
 - I opened [W3C HTML Validator](https://validator.w3.org/) and selected the "Validate by Direct Input" option and pasted the index.html content in, clicked "Check" and was greeted with the following 
@@ -184,23 +198,42 @@ message "Document checking completed. No errors or warnings to show."
 - I deleted the code on the left hand side of the screen and pasted my index.js code in, then clicked configure
 - I received three of the same warnings "Unnecessary semicolon" which disappeared when I deleted the semicolons and ran the code through again.
 
+---
 ### User Stories
 - As a user, I want to understand the use of the website straight away.
+    - From the image below, we can see we are greeted with a large image with text in the center when the page loads. The text says "Choose your breathing practise below".
+    This tells us straight away what the page is for and it is emphasised by the "Breathe" logo in the top left-hand corner.
 
+![Hero Image](assets/images/testingImages/UserStory1.PNG)
 
 - As a user, I want to be able to easily navigate throughout the site.
 - As a user, I want to be informed about the breathing techniques before I pick the one I wish to practise.
+    - The image below shows us the rest of the index.html page when we scroll down from the hero image. We can see there are two sections. On desktop, the breathing technique descriptions 
+    are shown on the left and the breathing practise circle is shown on the right. In mobile view, the breathing practise circle is shown beneath the heading and the techniques are listed underneath.
+
+![Techniques & Practise Section](assets/images/testingImages/UserStory3.PNG)    ![Techniques & Practise Section](assets/images/testingImages/UserStory2.PNG) 
+![Techniques & Practise Section](assets/images/testingImages/UserStory3.1.PNG)
+
 - As a user, I want to decide when my practise starts.
 - As a user, I want to be able to stop my practise.
+    - We can see below that the breathing circle has various buttons so the user can control when they start, by clicking the play button, Only after clicking the play 
+    button does the stop button appear which can be pressed to stop or reset the practise. 
+
+![Breathing Practise](assets/images/testingImages/UserStory4.PNG) ![Breathing Practise](assets/images/testingImages/UserStory5.PNG)
+
+- As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions 
+    - 
+![Breathing Practise Fullscreen](assets/images/testingImages/UserStory6.PNG)
+
 - As a user, I want calming colours to help me relax.
 - As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
 - As a user, I want to see social media links so I can learn more about the company on a separate page.
-- As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions
+    
 
-
+---
 ## Issues and Solutions
 
-
+---
 ## Deployment
 
 ### Initial Creation
@@ -236,6 +269,7 @@ Throughout development, three primary commands were used with the CLI [Git](http
 3. The "clone" option will provide you with a URL which can be used from your IDE of choice where you can use the "git clone" command in the terminal followed by the URL
 4. Alternatively, the "download" ZIP option gives you a link to download a ZIP file which you can then unpackage locally and open with an IDE
 
+---
 ## Credits
 ---
 ### Content
@@ -244,6 +278,7 @@ Throughout development, three primary commands were used with the CLI [Git](http
 - The toggle fullscreen function was created with the help of this [YouTube tutorial](https://www.youtube.com/watch?v=3FjYcMKZ3SU).
 - The CSS code to prevent the circle shape from distorting and enlarging in fullscreen was taken from [StackOverflow](https://stackoverflow.com/questions/3276226/how-to-make-a-full-screen-div-and-prevent-size-to-be-changed-by-content)
 - The CSS code for making the "breathe" logo visible with the hero-image behind was styled using information from [StackOverflow](https://stackoverflow.com/questions/56521316/how-do-i-overlay-a-transparent-navbar-over-a-hero-image-and-have-a-functioning-b)
+- The code for the 404.html page was created with the help of this [YouTube tutorial](https://www.youtube.com/watch?v=PbKOX2tkHlI)
 ---
 ### Media
 - The photos used on this site were obtained from [Unsplash](https://unsplash.com/).
