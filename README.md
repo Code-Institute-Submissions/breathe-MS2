@@ -1,6 +1,7 @@
 ![Breathe Logo](assets/images/logo/site-logo.PNG)
 
 ![Site on Different Devices](assets/images/other/AmIResponsive.PNG)
+
 --- 
 
 This project was created for my second Milestone Project with Code Institute in order to display my knowledge and understanding 
@@ -31,7 +32,6 @@ minimal distractions from the task at hand: to breathe.
     - [HTML CSS and JavaScript Testing](#html-css-and-javascript-testing)
     - [User Stories](#user-stories)
     - [Manual Testing](#manual-testing)
-
  * [Issues and Solutions](#issues-and-solutions)   
 * [Deployment](#deployment)
     * [Initial Creation](#initial-creation)
@@ -114,6 +114,7 @@ Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for 
 The original wireframes can be viewed [here](assets/images/oldWireframes). The new wireframes adapted a single page approach for this web app. 
 A custom 404 error page was added with an anchor link which the user can click and they will be redirected back to index.html page. 
 
+![404.html](assets/images/testingImages/errorHTML.PNG)
  ---
 ## Features
 ### index.html Page
@@ -135,7 +136,7 @@ A custom 404 error page was added with an anchor link which the user can click a
 - Modal to include "exit" button to return to index.html page when clicked
 
 ### Future Features to Implement
-- Animations to increase the size of the circle on inhale, the increased size to remain for the first hold, the cirlce to decrease to its origanal size throught the exhale and to remain the smaller 
+- Add animations to increase the size of the circle on inhale, the increased size to remain for the first hold, the cirlce to decrease to its origanal size throught the exhale and to remain the smaller 
 size for the second hold.
 - Add an option to sign up to "Breathe" where you can enter how often you would like to practise and set up alerts to remind you at the chosen time of day
 - Add soft, soothing music to play while the breathing practise is in session that can be switched on and off by the user
@@ -222,16 +223,108 @@ message "Document checking completed. No errors or warnings to show."
 ![Breathing Practise](assets/images/testingImages/UserStory4.PNG) ![Breathing Practise](assets/images/testingImages/UserStory5.PNG)
 
 - As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions 
-    - 
+    - The fullscreen button is to the right of the play button. As you can see from the image below, this allows the user to really concentrate on their breathing without the distraction of 
+    the breathing techniques text. I have added text when you hover over the settings button explaining the modal does not open when in fullscreen mode so the user will have to exit fullscreen 
+    to change their breathing practise choice 
+
 ![Breathing Practise Fullscreen](assets/images/testingImages/UserStory6.PNG)
 
 - As a user, I want calming colours to help me relax.
+    - As can be seen in the images above of the site, calm green colours have been chosen which have been shown to instill a sense of calm and relaxation into people.
+
 - As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
+    - The settings button on the breathing circle (when clicked) opens up the modal which can be seen below. The user can make their selection here or if they just select play the default 
+    box breathing exercise will begin. 
+
+![Modal with options](assets/images/testingImages/UserStory7.PNG)
+
+
 - As a user, I want to see social media links so I can learn more about the company on a separate page.
-    
+    - In the footer of the page, three social icons are displayed which when clicked will open a new tab and direct you to the appropriate pages. The image below is in mobile view 
+
+![Footer with social icons](assets/images/testingImages/UserStory8.PNG)
+
+### Manual Testing
+- Header
+    - Located at the top of the screen on all devices
+    - Breathe icon visible on top left of the screen 
+
+- Footer
+    - Located at the bottom of the screen on all devices
+    - Social icons display in a horizonal row
+    - Social icons:
+        - Note when you hover over each, it changes colour 
+        - Click on each icon
+        - Links open in new tab
+        - Correct social media page is opened for each
+
+- Hero-image
+    - Displayed at the top of the page taking up 100vh and 100% width 
+    - Transparent jumbotron with big text in the center
+
+- Breathing Techniques and Practise
+    - Three pieces of text stacked with details of the relevant breathing techniques. 
+    - Breathing practise circle
+        - Play button 
+            - Hover over the button and observe the text "Click to stop"
+            - On click:
+                - Displays text "Ready?" "Lets go!"
+                - Starts the breathing practise i.e calls the startBreathing function
+                - Disables stop and setting button for 2.5 seconds
+                - Hides the play button and shows the stop button 
+
+        - Settings button
+            - Hover over the button and observe the text "Click to change technique."
+            - On click:
+                - Calls the clearInterval function
+                - Hides the stop button and shows the start button
+                - Opens the modal with breathing choices
+                - Returns breathe circle colour to ![#DADED4](https://via.placeholder.com/30x30.png/DADED4) 
+                - Changes span where countdown is back to being empty
+                - Changes span with breathing prompts to display "Press play to begin"
+
+        - Stop button
+            - Hover over the button and observe the text "Click to stop"
+            - On click:
+                - Calls the clearInterval function
+                - Hides the stop button and shows the start button
+                - Returns breathe circle colour to ![#DADED4](https://via.placeholder.com/30x30.png/DADED4) 
+                - Changes span where countdown is back to being empty
+                - Changes span with breathing prompts to display "Press play to begin"
+
+        - Fullscreen button
+            - Hover over the button and observe the text "Click for fullscreen. Cannot open settings in fullscreen"
+            - On click:
+                - Toggles fullscreen mode
+
+        - Modal
+            - Shows the different breathing techniques with radio buttons beside each
+            - On click:
+                - Box breathing radio button and "Let's Start" button, the box breathing technique begins
+                - Relax breathing radio button and "Let's Start" button, the relax breathing technique begins
+                - Calm breathing radio button and "Let's Start" button, the calm breathing technique begins
+                - Custom breathing radio button, reveals sliders for time needed for inhale, hold, exhale and a second hold
+                    - When you slide to your preferred time(in seconds) for each and press the "Let's Start" button, the custom breathing technique begins
+                - Close button in top right hand corner causes  custom values to be hidden
+                - Radio buttons for box, relax and calm also cause the custom radio options to be hidden (if it was previously selected)
+                - Slider also displays value range of 0-20 above the slider to show the user the amount of seconds they are deciding to practise
+        - Let's Start button 
+            - On click:
+                - Displays text "Ready?" "Lets go!"
+                - Initiates the breathing practise i.e calls the startBreathing function
+                - Disables stop and setting button for 2.5 seconds
+                - Hides the play button and shows the stop button 
 
 ---
 ## Issues and Solutions
+- An issue I ran into when implementing the toggle fullscreen function was that the shape of the circle expanded to fit the height and width of the device. I researched this a lot to find a solution 
+and came across a thread on [StackOverflow](https://stackoverflow.com/questions/3276226/how-to-make-a-full-screen-div-and-prevent-size-to-be-changed-by-content) which I have reference below in the 
+content section
+- Another issue I faced throughout the course of this project was to do with the setTimeout and setInterval functions. I wanted text to appear saying "Ready?" and "Let's go" and I achieved this by 
+using a setTimeout function before the setInteral for the startBreathing function was called. This meant if I clicked stop or settings button before the first inhale, it wasn't calling the clearTimeout  
+and the setInteral function hadn't been called yet. To overcome this, I set a 2.5 second disable button function on the stop button and the settings button. Another way of solving this issue 
+would have been to include the 2.5 seconds in the getBreathText calculations
+- 
 
 ---
 ## Deployment
@@ -285,8 +378,8 @@ Throughout development, three primary commands were used with the CLI [Git](http
 ---
 ### Acknowledgements
 I would like to thank:
-- my brother Gregory for his patience in answering my JavaScript related questions. 
-- I would also like to thank my mentor Rohit Sharma for his guidance throughout this project.
+- My brother Gregory for his patience in answering my JavaScript related questions. 
+- My mentor Rohit Sharma for his guidance throughout this project.
 - My peers in various Slack channels for always getting back to me quickly with questions or feedback.
 
 ---
