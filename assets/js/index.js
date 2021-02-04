@@ -94,12 +94,13 @@ function initialiseBreathingApp() {
             clearInterval(intervalID);
             $("#stop-btn").hide();
             $("#start-btn").show();
-            
             inhaleExhale.textContent = "Press play to begin";
             /**Puts a blank space in span to keep same 
              * distance between elements
              */
             countdown.textContent = "\xa0";
+            //Reverts background-colour back to original colour
+            breatheCircle.classList.remove(breatheCircle.classList.item(1));
         });
 
         settingsBtn.addEventListener("click", function () {
@@ -109,6 +110,7 @@ function initialiseBreathingApp() {
             
             inhaleExhale.textContent = "Press play to begin";
             countdown.textContent = "\xa0";
+            breatheCircle.classList.remove(breatheCircle.classList.item(1));
         });
 
         submitBtn.addEventListener("click", function () {
@@ -122,8 +124,10 @@ function initialiseBreathingApp() {
     registerEventHandlers();
 
     /**
-     * Displays text in breathe circle before breathing intervals begin
-     * and sets clearInterval.
+     * Sets 2.5 delay on setInterval so text displays 
+     * in breathe circle before exercise begins
+     * Displays the prompts from getBreathText and
+     * colour changes from one prompt to the next
      * @param {TYPE} arg
      * @return {!Array<TYPE>}
      * @template TYPE

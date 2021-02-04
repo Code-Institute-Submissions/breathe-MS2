@@ -184,6 +184,18 @@ message "Document checking completed. No errors or warnings to show."
 - I deleted the code on the left hand side of the screen and pasted my index.js code in, then clicked configure
 - I received three of the same warnings "Unnecessary semicolon" which disappeared when I deleted the semicolons and ran the code through again.
 
+### User Stories
+- As a user, I want to understand the use of the website straight away.
+
+
+- As a user, I want to be able to easily navigate throughout the site.
+- As a user, I want to be informed about the breathing techniques before I pick the one I wish to practise.
+- As a user, I want to decide when my practise starts.
+- As a user, I want to be able to stop my practise.
+- As a user, I want calming colours to help me relax.
+- As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
+- As a user, I want to see social media links so I can learn more about the company on a separate page.
+- As a user, I want to control whether the practise is played in fullscreen mode to allow for a breathing session with even less distractions
 
 
 ## Issues and Solutions
