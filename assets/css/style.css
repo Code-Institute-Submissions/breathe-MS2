@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #a3dcbe   ;
     font-size: 3em;
     font-weight: 800;
-    margin-left: 5vw;
+    margin-left: 10%;
     margin-top: 0.5em
 }
 
@@ -126,7 +126,7 @@ a:hover {
     margin: 0 auto;
 }
 .breathing-technique-h1 {
-    margin-bottom: 1em;
+    margin: 10px;
     font-size: 2em;
 }
 
@@ -140,7 +140,7 @@ a:hover {
 }
 
 .breathing-technique-container {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
 /*breathe circle*/
@@ -181,16 +181,16 @@ a:hover {
 
 /*Class styles for breathe circle */
 .inhale-colour{
-background-color: #D1E2C4;
-}
-.hold-colour {
 background-color: #a3dcbe;
 }
+.hold-colour {
+background-color: #D1E2C4;
+}
 .exhale-colour {
-background-color: #DADED4 ;
+background-color: #5ec08c ;
 }
 .hold-colour2 {
-background-color: #a3dcbe ;
+background-color: #D1E2C4;
 }
 
 .settings-btn {
@@ -295,4 +295,24 @@ footer {
 }
 .list-group-item a:hover {
     color: #a3dcbe ;
+}
+
+/*404.html */
+.error-body {
+    background: #DADED4 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error-h1 {
+    font-size: 3em;
+}
+.error-container {
+    padding: 3em;
+    background: #F3F3F3  ;
+}
+
+.redirect {
+    font-size: 1.5em;
+    font-weight: 600;
 }
