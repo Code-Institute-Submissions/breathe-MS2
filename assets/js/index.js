@@ -9,52 +9,53 @@ function initialiseBreathingApp() {
     const breatheCircle = document.getElementById("breathe-circle");
     const inhaleExhale = document.getElementById("inhale-exhale-text");
     const countdown = document.getElementById("breathingCountdown");
-    
+
     let intervalID = 0;
 
     /* Create variables for  linkSliderToSpan() function*/
-    let sliderInhale = document.getElementById("inhale");
-    let sliderInhaleHold = document.getElementById("inhale-hold");
-    let sliderExhale = document.getElementById("exhale");
-    let sliderExhaleHold = document.getElementById("exhale-hold");
+    const sliderInhale = document.getElementById("inhale");
+    const sliderInhaleHold = document.getElementById("inhale-hold");
+    const sliderExhale = document.getElementById("exhale");
+    const sliderExhaleHold = document.getElementById("exhale-hold");
 
-    let inhaleSpan = document.getElementById("inhaleValue");
-    let inhaleHoldSpan = document.getElementById("inhaleHoldValue");
-    let exhaleSpan = document.getElementById("exhaleValue");
-    let exhaleHoldSpan = document.getElementById("exhaleHoldValue");
+    const inhaleSpan = document.getElementById("inhaleValue");
+    const inhaleHoldSpan = document.getElementById("inhaleHoldValue");
+    const exhaleSpan = document.getElementById("exhaleValue");
+    const exhaleHoldSpan = document.getElementById("exhaleHoldValue");
 
     // Set variables for elements from index.html page to use in getSelectedBreathingType function
-    let boxBreathing = document.getElementById("boxBreathing");
-    let relaxBreathing = document.getElementById("relaxBreathing");
-    let calmBreathing = document.getElementById("calmBreathing");
-    let customBreathing = document.getElementById("customBreathing");
+    const boxBreathing = document.getElementById("boxBreathing");
+    const relaxBreathing = document.getElementById("relaxBreathing");
+    const calmBreathing = document.getElementById("calmBreathing");
+    const customBreathing = document.getElementById("customBreathing");
 
     // Set object variables for the three set breathing types
-    let box = {
+    const box = {
         inhale: 4,
         inhaleHold: 4,
         exhale: 4,
         exhaleHold: 4
     };
 
-    let relax = {
+    const relax = {
         inhale: 4,
         inhaleHold: 7,
         exhale: 8,
         exhaleHold: 0
     };
 
-    let calm = {
+    const calm = {
         inhale: 7,
         inhaleHold: 0,
         exhale: 11,
         exhaleHold: 0
     };
 
-    $("#range-labels").hide();
-    $("#stop-btn").hide();
-
-    function registerEventHandlers() {
+    // Hides elements on index.html
+    function hideOnLoad() {
+        $("#range-labels, #stop-btn").hide();
+    }
+    function toggleCustomBtnOnClick() {
         $("#customBreathing").click(function () {
             $("#range-labels").show();
         });
@@ -66,31 +67,29 @@ function initialiseBreathingApp() {
         $("#close-btn").click(function () {
             $("#range-labels").hide();
         });
+    }
+    // Disable stop and settings button for 2.5 seconds
+    function disableBtns() {
+        $(stopBtn).attr("disabled", "disabled");
+        $(settingsBtn).attr("disabled", "disabled");
+        setTimeout(function () {
+            $(stopBtn).attr("disabled", false);
+            $(settingsBtn).attr("disabled", false);
+        }, 2500);
+    }
 
-        function disableBtns() {
-            $(stopBtn).attr("disabled", "disabled");
-            $(settingsBtn).attr("disabled", "disabled");
-            setTimeout(function () {
-                $(stopBtn).attr("disabled", false);
-                $(settingsBtn).attr("disabled", false);
-            }, 2500);
-        }
-        //Adding click functions to buttons
+    //Add click events to startBtn
+    function onStartBtnClick() {
         $(startBtn).click(function () {
             startBreathing();
             disableBtns();
             $("#start-btn").hide();
             $("#stop-btn").show();
         });
+    }
 
-        //Modal closes when submit button clicked
-        $(submitBtn).click(function () {
-            $("#letsBreathe").modal("hide");
-            $("#start-btn").hide();
-            $("#stop-btn").show();
-            disableBtns();
-        });
-
+    //Add click events to stopBtn
+    function onStopBtnClick() {
         $(stopBtn).click(function () {
             clearInterval(intervalID);
             $("#stop-btn").hide();
@@ -103,35 +102,43 @@ function initialiseBreathingApp() {
             //Reverts background-colour back to original colour
             breatheCircle.classList.remove(breatheCircle.classList.item(1));
         });
+    }
 
+    function onSettingsBtnClick() {
         settingsBtn.addEventListener("click", function () {
             clearInterval(intervalID);
             $(stopBtn).hide();
             $(startBtn).show();
-            
+
             inhaleExhale.textContent = "Press play to begin";
             countdown.textContent = "\xa0";
             breatheCircle.classList.remove(breatheCircle.classList.item(1));
         });
+    }
 
+    function onSubmitBtnClick() {
         submitBtn.addEventListener("click", function () {
             // start breathing function    
             startBreathing();
             $(stopBtn).show();
             $(startBtn).hide();
+            $("#letsBreathe").modal("hide");
+            disableBtns();
         });
     }
-    //Call the function
-    registerEventHandlers();
+
+    hideOnLoad();
+    toggleCustomBtnOnClick();
+    onStartBtnClick();
+    onStopBtnClick();
+    onSettingsBtnClick();
+    onSubmitBtnClick();
 
     /**
      * Sets 2.5 delay on setInterval so text displays 
      * in breathe circle before exercise begins
      * Displays the prompts from getBreathText and
      * colour changes from one prompt to the next
-     * @param {TYPE} arg
-     * @return {!Array<TYPE>}
-     * @template TYPE
      */
     function startBreathing() {
         let breathingType = getSelectedBreathingType();
@@ -163,7 +170,7 @@ function initialiseBreathingApp() {
                 breatheCircle.classList.add(options.circleClassName);
                 /* Removes previous color class from current breathing prompt  
                 on breathe circle to prevent second hold colour from sticking*/
-                if (breatheCircle.classList.length > 1 ) {
+                if (breatheCircle.classList.length > 1) {
                     breatheCircle.classList.remove(breatheCircle.classList.item(1));
                     breatheCircle.classList.add(options.circleClassName);
                 }
@@ -173,11 +180,12 @@ function initialiseBreathingApp() {
     }
 
     /**
-     * Create function to display correct breath prompts and countdown 
-     * in seconds for respective breathing methods
+     * Create function to display correct breath prompts,  
+     * countdown in seconds and background-colour changes   
+     * for respective breathing methods
      * @param {Integer} elapsedSeconds
      * @param {Object} breathType
-     * @return {!text<String>}
+     * @return {!<Object>}
      */
     function getBreathText(elapsedSeconds, breathType) {
         let breathDuration = breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold;
@@ -188,7 +196,7 @@ function initialiseBreathingApp() {
                 text: "Inhale",
                 countdown: breathType.inhale - breathSeconds,
                 circleClassName: "inhale-colour",
-            
+
             };
         }
         // 1st hold
@@ -197,7 +205,7 @@ function initialiseBreathingApp() {
                 text: "Hold",
                 countdown: (breathType.inhale + breathType.inhaleHold) - breathSeconds,
                 circleClassName: "hold-colour",
-                
+
             };
         }
         // 'out'
@@ -206,7 +214,7 @@ function initialiseBreathingApp() {
                 text: "Exhale",
                 countdown: (breathType.inhale + breathType.inhaleHold + breathType.exhale) - breathSeconds,
                 circleClassName: "exhale-colour",
-                
+
             };
         }
         // 2nd hold
@@ -221,7 +229,7 @@ function initialiseBreathingApp() {
 
     /**
      * Links checked radio button to object variable to use in startBreathing() function
-     * @return {!box<Object>}
+     * @return {!<Object>}
      */
     function getSelectedBreathingType() {
         if (boxBreathing.checked) {
@@ -244,7 +252,7 @@ function initialiseBreathingApp() {
 
     /**
      * Turns custom string value into integer value for use in getSelectedBreathingType()
-     * @return {!box<Object>}
+     * @return {!<Object>}
      */
     function getCustomBreathingType() {
         return {
