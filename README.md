@@ -112,7 +112,8 @@ Using <a href="https://balsamiq.com/">Balsamiq</a>, I created my wireframes for 
  
 #### Differences to Wireframes
 The original wireframes can be viewed [here](assets/images/oldWireframes). The new wireframes adapted a single page approach for this web app. 
-A custom 404 error page was added with an anchor link which the user can click and they will be redirected back to index.html page. 
+A custom 404 error page was added with an anchor link which the user can click and be redirected to the index.html page Even though this a single page application the 404.html is created for 
+users who somehow direct to a non-existent page such as [this](https://shielh.github.io/breathe-MS2/hello)
 
 ![404.html](assets/images/testingImages/errorHTML.PNG)
  ---
@@ -212,7 +213,7 @@ message "Document checking completed. No errors or warnings to show."
     - The image below shows us the rest of the index.html page when we scroll down from the hero image. We can see there are two sections. On desktop, the breathing technique descriptions 
     are shown on the left and the breathing practise circle is shown on the right. In mobile view, the breathing practise circle is shown beneath the heading and the techniques are listed underneath.
 
-![Techniques & Practise Section](assets/images/testingImages/UserStory3.PNG)    ![Techniques & Practise Section](assets/images/testingImages/UserStory2.PNG) 
+![Techniques & Practise Section](assets/images/testingImages/UserStory2.PNG) ![Techniques & Practise Section](assets/images/testingImages/UserStory3.PNG)    
 ![Techniques & Practise Section](assets/images/testingImages/UserStory3.1.PNG)
 
 - As a user, I want to decide when my practise starts.
@@ -230,7 +231,8 @@ message "Document checking completed. No errors or warnings to show."
 ![Breathing Practise Fullscreen](assets/images/testingImages/UserStory6.PNG)
 
 - As a user, I want calming colours to help me relax.
-    - As can be seen in the images above of the site, calm green colours have been chosen which have been shown to instill a sense of calm and relaxation into people.
+    - As can be seen in the images above of the site, calm green colours have been chosen which have been shown to instill a sense of calm and relaxation into people. Different shades of green 
+    are also used when the startBreathing function is called with deeper greens for the inhale and exhale part of the exercise and a lighter green for the holds
 
 - As a user, I want to be able to change my selection of breathing technique even after my practise has begun.
     - The settings button on the breathing circle (when clicked) opens up the modal which can be seen below. The user can make their selection here or if they just select play the default 
@@ -360,8 +362,7 @@ Throughout development, three primary commands were used with the CLI [Git](http
 1. Open [Github](https://github.com/) and navigate to the [repository](https://github.com/shielh/breathe-MS2)
 2. Click the green "code" button and select either "clone" or "download"
 3. The "clone" option will provide you with a URL which can be used from your IDE of choice where you can use the "git clone" command in the terminal followed by the URL
-4. Alternatively, the "download" ZIP option gives you a link to download a ZIP file which you can then unpackage locally and open with an IDE
-
+4. Alternatively, the "download" ZIP option gives you a link to download a ZIP file which you can then unpackage locally and open with an IDE and run index.html
 ---
 ## Credits
 ---
