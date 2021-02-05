@@ -55,6 +55,7 @@ function initialiseBreathingApp() {
     function hideOnLoad() {
         $("#range-labels, #stop-btn").hide();
     }
+
     function toggleCustomBtnOnClick() {
         $("#customBreathing").click(function () {
             $("#range-labels").show();
@@ -126,7 +127,7 @@ function initialiseBreathingApp() {
             disableBtns();
         });
     }
-
+    //Call above functions 
     hideOnLoad();
     toggleCustomBtnOnClick();
     onStartBtnClick();
@@ -137,8 +138,8 @@ function initialiseBreathingApp() {
     /**
      * Sets 2.5 delay on setInterval so text displays 
      * in breathe circle before exercise begins
-     * Displays the prompts from getBreathText and
-     * colour changes from one prompt to the next
+     * Displays the prompts from getCurrentBreathState 
+     * and colour changes from one prompt to the next
      */
     function startBreathing() {
         let breathingType = getSelectedBreathingType();
@@ -163,7 +164,7 @@ function initialiseBreathingApp() {
             intervalID = setInterval(function () {
                 console.log(seconds);
 
-                let options = getBreathText(seconds, breathingType);
+                let options = getCurrentBreathState(seconds, breathingType);
 
                 inhaleExhale.textContent = options.text;
                 countdown.textContent = options.countdown;
@@ -187,7 +188,7 @@ function initialiseBreathingApp() {
      * @param {Object} breathType
      * @return {!<Object>}
      */
-    function getBreathText(elapsedSeconds, breathType) {
+    function getCurrentBreathState(elapsedSeconds, breathType) {
         let breathDuration = breathType.inhale + breathType.inhaleHold + breathType.exhale + breathType.exhaleHold;
         let breathSeconds = elapsedSeconds % breathDuration;
 
@@ -272,6 +273,7 @@ function initialiseBreathingApp() {
             span.innerHTML = this.value;
         };
     }
+
     linkSliderValueToSpanText(sliderInhale, inhaleSpan);
     linkSliderValueToSpanText(sliderInhaleHold, inhaleHoldSpan);
     linkSliderValueToSpanText(sliderExhale, exhaleSpan);
