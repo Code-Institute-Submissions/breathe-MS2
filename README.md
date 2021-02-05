@@ -4,8 +4,10 @@
 
 --- 
 
+A live version of my site is available [here](https://shielh.github.io/breathe-MS2/)
+
 This project was created for my second Milestone Project with Code Institute in order to display my knowledge and understanding 
-of HTML, CSS, Bootstrap and JavaScript.
+of HTML, CSS and JavaScript.
 
 I wanted this project to be completely different from my MS1. I also thought why not create something that lots of people would use on a daily basis.
 I know there are already a few breathing / meditation apps but I don't think there are many with a simple single page interface with 
@@ -13,9 +15,9 @@ minimal distractions from the task at hand: to breathe.
 
 ---
 ## Table of Contents
-* [User Experience Design (UX)](#User-Experience)
-    * [The Strategy Plane](#The-Strategy-Plane)
+* [User Experience](#User-Experience)
     * [User stories](#User-Stories)
+    * [The Strategy Plane](#The-Strategy-Plane)
     * [Design](#Design)
         * [Font](#Font)
         * [Images](#Images)
@@ -36,6 +38,7 @@ minimal distractions from the task at hand: to breathe.
 * [Deployment](#deployment)
     * [Initial Creation](#initial-creation)
     * [Deployment via GitHub](#deployment-via-github)
+    * [Deployment Locally](#deployment-locally)
 * [Credits](#credits)
     * [Content](#content)
     * [Media](#media)
@@ -213,7 +216,9 @@ message "Document checking completed. No errors or warnings to show."
     - The image below shows us the rest of the index.html page when we scroll down from the hero image. We can see there are two sections. On desktop, the breathing technique descriptions 
     are shown on the left and the breathing practise circle is shown on the right. In mobile view, the breathing practise circle is shown beneath the heading and the techniques are listed underneath.
 
-![Techniques & Practise Section](assets/images/testingImages/UserStory2.PNG) ![Techniques & Practise Section](assets/images/testingImages/UserStory3.PNG)    
+![Techniques & Practise Section](assets/images/testingImages/UserStory2.PNG) 
+
+![Techniques & Practise Section](assets/images/testingImages/UserStory3.PNG)    
 ![Techniques & Practise Section](assets/images/testingImages/UserStory3.1.PNG)
 
 - As a user, I want to decide when my practise starts.
@@ -323,10 +328,11 @@ message "Document checking completed. No errors or warnings to show."
 and came across a thread on [StackOverflow](https://stackoverflow.com/questions/3276226/how-to-make-a-full-screen-div-and-prevent-size-to-be-changed-by-content) which I have reference below in the 
 content section
 - Another issue I faced throughout the course of this project was to do with the setTimeout and setInterval functions. I wanted text to appear saying "Ready?" and "Let's go" and I achieved this by 
-using a setTimeout function before the setInteral for the startBreathing function was called. This meant if I clicked stop or settings button before the first inhale, it wasn't calling the clearTimeout  
-and the setInteral function hadn't been called yet. To overcome this, I set a 2.5 second disable button function on the stop button and the settings button. Another way of solving this issue 
-would have been to include the 2.5 seconds in the getBreathText calculations
-- 
+using a setTimeout function before the setInteral where the startBreathing was called. This meant if I clicked the stop or settings button before the first inhale, it wasn't calling the clearTimeout  
+as the setInterval function hadn't been called yet. To overcome this, I set a 2.5 second disable button function on the stop button and the settings button. Another way of solving this issue 
+would have been to include the 2.5 seconds in the getCurrentBreathState calculations
+- Another bug I came across was when I was adding colour classes to the getCurrentBreathState function. When I pressed play, the colours would change for inhale, hold, exhale and the second hold but 
+then the same colour stuck for the next round of breaths. To overcome this, I had to  add code to remove the previous colour class of the breath circle when the length of classes was greater than one.  
 
 ---
 ## Deployment
@@ -358,7 +364,7 @@ Throughout development, three primary commands were used with the CLI [Git](http
 7. Finally, click to confirm my selection
 8. A live version of Breathe is now live on Github [here](https://shielh.github.io/breathe-MS2/)
 
-### Running Locally
+### Deployment Locally
 1. Open [Github](https://github.com/) and navigate to the [repository](https://github.com/shielh/breathe-MS2)
 2. Click the green "code" button and select either "clone" or "download"
 3. The "clone" option will provide you with a URL which can be used from your IDE of choice where you can use the "git clone" command in the terminal followed by the URL
