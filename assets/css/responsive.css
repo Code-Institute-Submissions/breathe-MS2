@@ -12,7 +12,9 @@
     .inhale-exhale {
         font-size: 1.5em;
     }
-    /* Add different jpg file with cropped hero-image */
+
+    /* Add different jpg file with cropped hero-image 
+    but with same properties*/
     .hero-image {
     background: url("../images/hero-image/hero-image-1200pxMaxWidth.jpg") no-repeat bottom center fixed ;  
     height: 100vh;
@@ -29,23 +31,23 @@
     }
 }
 
+/*Making circle smaller in smaller devices*/
 @media only screen and (min-width: 768px)
 and (max-width: 1024px){
     .breathe-circle {
     height: 40vw;
     width: 40vw;
     border-radius: 50%;
-    
 }
 }
    
+/*Adding border around techniques text
+in smaller devices and making logo and 
+some text smaller*/
 @media only screen and (max-width : 768px){
-    .techniques-img{
-        display: none;
-    }
     .site-logo {
     font-size: 2em;
-}
+    }
     .breathing-technique-container{
         border: 1px solid #a3dcbe;
         padding: 1em;
@@ -55,14 +57,35 @@ and (max-width: 1024px){
     }
 }
 
-@media only screen and (min-width : 1024px){
-    .jumbotron-text{
-        font-size: 3em;
+
+/*Make everything larger for large desktop screens*/
+@media only screen and (min-width : 1300px){
+    .green-hr {
+        border: 4px solid #a3dcbe  ;
     }
-    .jumbotron-btn {
+    .jumbotron-text{
         font-size: 3em;
     }
     .circle-btn {
         font-size: 2em;
     }
+    .breathing-info-container {
+        height: fit-content;
+    }
+    .breathing-technique-info {
+        font-size: 1.5em;;
+    }
+    .site-logo{
+        font-size: 4em;
+    }
+    .footer-container {
+        height: fit-content;
+    }
+    .social-icons {
+        font-size: 2em;
+    }
+    .jumbotron-text {
+        font-size: 4em;
+    }
+
 }
